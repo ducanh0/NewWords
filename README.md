@@ -9,6 +9,7 @@ mục tiêu hôm nay :
 
 tóm tắt file yêu cầu : 
   - 2 phiên bản cmd , đồ họa
+    -
           [0] Exit
           [1] Add
           [2] Remove
@@ -29,4 +30,9 @@ tóm tắt file yêu cầu :
   Nhiệm vụ trước mắt :
     - Tạo khung chương trình 
     - tạo được phiên bản cmd với file 100 từ 
+
+  Quy tắc code : 
+    - phải comment trước mọi hàm , ghi hàm đó làm gì , các biến tham số đóng vai trò gì 
+    - đặt tên biến dài , có nghĩa 
+    - code cách thưa chút cho dễ nhìn , debug
     
