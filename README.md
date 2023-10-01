@@ -9,7 +9,6 @@ mục tiêu hôm nay :
 
 tóm tắt file yêu cầu : 
   - 2 phiên bản cmd , đồ họa
-      Welcome to My Application!
           [0] Exit
           [1] Add
           [2] Remove
