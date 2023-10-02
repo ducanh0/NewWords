@@ -36,4 +36,4 @@ tóm tắt file yêu cầu :
      [0] phải comment trước mọi hàm , ghi hàm đó làm gì , các biến tham số đóng vai trò gì 
      [1] đặt tên biến dài , có nghĩa 
      [2] code cách thưa chút cho dễ nhìn , debug
-    
+     [3] sửa cái gì thì nên viết vào file readme github này cho mn đều nắm được 
