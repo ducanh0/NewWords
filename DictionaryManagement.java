@@ -3,6 +3,10 @@ import jdk.jshell.execution.DirectExecutionControl;
 import java.util.Dictionary;
 import java.util.Scanner;
 
+/**
+ * quan ly them, sua, xoa bang cmd, file , database ??
+ * tim kiem tu vung , goi den MyDictionary
+ */
 public class DictionaryManagement {
 
     MyDictionary dictionary = new MyDictionary();

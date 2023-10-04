@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * quan ly tu dien chua nhieu vu vung
+ * cai tien len dung trie de quan ly
+ */
 public class MyDictionary {
 
     //Word [] arr ;
@@ -23,5 +27,20 @@ public class MyDictionary {
         listWords.add(word);
     }
 
+    /**
+     * xoa tu khoi tu dien
+     */
+
+    public void removeWord(Word word){
+
+    }
+
+    /**
+     * sua du lieu tu vung
+     */
+
+    public void fixWord(Word oldWord,Word newWord){
+
+    }
 
 }
