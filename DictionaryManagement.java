@@ -1,4 +1,13 @@
+import jdk.jshell.execution.DirectExecutionControl;
+
+import java.util.Dictionary;
+import java.util.Scanner;
+
 public class DictionaryManagement {
+
+    MyDictionary dictionary = new MyDictionary();
+    Scanner scanner = new Scanner(System.in);
+
     /**
      * nhap so luong tu vung (goi la N)
      * 2 * N dong tiep theo tuong ung voi N cap (tu tieng anh - nghia tieng viet)
@@ -10,8 +19,21 @@ public class DictionaryManagement {
      * tu tieng anh N
      * nghia tieng viet N
      */
-    public void insertFromCommandline(){
+    public void insertFromCommandline() {
+        System.out.println("Nhap so luong tu vung: ");
+        int N = scanner.nextInt();
+        scanner.nextLine();
 
+        for (int i = 0; i < N; i++) {
+            System.out.print("Nhap tu tieng Anh: ");
+            String englishWord = scanner.nextLine();
+
+            System.out.print("Nhap nghia tieng Viet: ");
+            String vietnameseMeaning = scanner.nextLine();
+
+            Word word = new Word(englishWord, vietnameseMeaning);
+            dictionary.addWord(word);
+        }
     }
 
     /**
@@ -28,8 +50,16 @@ public class DictionaryManagement {
      * cai tien : dung trie de tim kiem ??
      */
 
-    public void dictionaryLookup(){
-
+    public void dictionaryLookup() {
+        System.out.print("Nhap tu can tra: ");
+        String lookUpWord = scanner.nextLine();
+        for (Word x : dictionary.getListWords()) {
+            if (x.getWord_target().equals(lookUpWord)) {
+                System.out.print(x.getWord_target());
+                System.out.print(" co nghia la: ");
+                System.out.println(x.getWord_explain());
+            }
+        }
     }
 
     /**
