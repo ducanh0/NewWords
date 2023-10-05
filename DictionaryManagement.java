@@ -1,8 +1,13 @@
 import jdk.jshell.execution.DirectExecutionControl;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Scanner;
 
+/**
+ * quan ly them, sua, xoa bang cmd, file , database ??
+ * tim kiem tu vung , goi den MyDictionary
+ */
 public class DictionaryManagement {
 
     MyDictionary dictionary = new MyDictionary();
@@ -63,30 +68,6 @@ public class DictionaryManagement {
     }
 
     /**
-     * them du lieu tu dong lenh
-     */
-
-    public void addNewWordsFromCmd(){
-
-    }
-
-    /**
-     * xoa du lieu tu dong lenh
-     */
-
-    public void removeWordsFromCmd(){
-
-    }
-
-    /**
-     * sua du lieu tu dong lenh , sua y nghia cua tu (vi du : sua nghia cua 'hello' tu 'xin chao' thanh 'halo' , vi du vui thoi :v)
-     */
-
-    public void adjustWordsFromCmd(){
-
-    }
-
-    /**
      * xuat du lieu ra tep
      */
 
@@ -95,8 +76,26 @@ public class DictionaryManagement {
     }
 
     /**
-     *
+     * them tu vao tu dien
      */
+    public void addWord() {
+
+    }
+
+    /**
+     * xoa 1 tu trong tu dien
+     */
+    public void removeWord() {
+
+    }
+
+    /**
+     * sua du lieu tu vung
+     */
+    public void adjustWord() {
+
+    }
+
     public void showAllWords() {
     }
 }

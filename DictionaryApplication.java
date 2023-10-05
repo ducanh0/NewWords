@@ -2,7 +2,7 @@ public class DictionaryApplication {
     /**
      * hien thi giao dien do hoa
      */
-    public void runApplication(){
+    public static void main(String [] args){ // chay phien ban do hoa
 
     }
 }
