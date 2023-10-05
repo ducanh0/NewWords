@@ -1,5 +1,6 @@
 import jdk.jshell.execution.DirectExecutionControl;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Scanner;
 
@@ -64,30 +65,6 @@ public class DictionaryManagement {
                 System.out.println(x.getWord_explain());
             }
         }
-    }
-
-    /**
-     * them du lieu tu dong lenh
-     */
-
-    public void addNewWordsFromCmd(){
-
-    }
-
-    /**
-     * xoa du lieu tu dong lenh
-     */
-
-    public void removeWordsFromCmd(){
-
-    }
-
-    /**
-     * sua du lieu tu dong lenh , sua y nghia cua tu (vi du : sua nghia cua 'hello' tu 'xin chao' thanh 'halo' , vi du vui thoi :v)
-     */
-
-    public void adjustWordsFromCmd(){
-
     }
 
     /**

@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+
 /**
  * quan ly 1 tu vung
  */
 public class Word {
     private String word_target ; // tu vung tieng anh
-    private String word_explain; // nghia tieng viet
+    private ArrayList<String> word_explain; // nghia tieng viet
 
     /**
      * Constructor.
      */
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
-        this.word_explain = word_explain;
+        this.word_explain.add(word_explain);
     }
 
     public String getWord_target() {
@@ -21,11 +23,31 @@ public class Word {
         this.word_target = word_target;
     }
 
-    public String getWord_explain() {
+    public ArrayList<String> getWord_explain() {
         return word_explain;
     }
 
     public void setWord_explain(String word_explain) {
-        this.word_explain = word_explain;
+        this.word_explain.add(word_explain);
+    }
+
+    /**
+     * sua y nghia
+     * for trau de xoa
+     * khi tim duoc oldMeaning , swap vs thang cuoi arraylist -> xoa thang cuoi arraylist
+     *
+     * khi bo sung y nghia -> khong phai xoa thang nao -> cho oldMeaning  = "??"
+     */
+    public void adjustMeaning(String oldMeaning,String newMeaning){
+        for(int i  = 0;i < word_explain.size();i ++){
+            String str = word_explain.get(i) ;
+
+            if(str.equals(oldMeaning)) {
+                word_explain.set(i , word_explain.remove(word_explain.size() - 1)) ;
+                break;
+            }
+        }
+
+        word_explain.add(newMeaning);
     }
 }
