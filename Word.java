@@ -12,6 +12,7 @@ public class Word {
      */
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
+        this.word_explain = new ArrayList<>();
         this.word_explain.add(word_explain);
     }
 
@@ -49,5 +50,18 @@ public class Word {
         }
 
         word_explain.add(newMeaning);
+    }
+
+    /** Show a word in dictionary, use for testing. */
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("%-12s", word_target)).
+                append("| ").
+                append(word_explain.get(0));
+        for (int i = 1; i < word_explain.size(); ++i) {
+            result.append("\n            | ").append(word_explain.get(i));
+        }
+        return  result.toString();
     }
 }
