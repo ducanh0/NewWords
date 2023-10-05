@@ -56,7 +56,7 @@ public class DictionaryCommandline {
         System.out.println("[7] Game");
         System.out.println("[8] Import from file");
         System.out.println("[9] Export to file");
-        System.out.println("Your action: ");
+        System.out.print("Your action: ");
         int act = scanner.nextInt();
 
         switch (act) {
