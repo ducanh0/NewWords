@@ -94,5 +94,9 @@ public class DictionaryManagement {
 
     }
 
-
+    /**
+     *
+     */
+    public void showAllWords() {
+    }
 }
