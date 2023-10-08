@@ -3,7 +3,8 @@ app support learn English words
 
 information : https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view 
 
-tóm tắt file yêu cầu : 
+
+ - chức năng :
  - 
           [0] Exit ( dang )
           [1] Add ( dang )
@@ -20,12 +21,14 @@ tóm tắt file yêu cầu :
     - lấy 100 nghìn từ csdl , đọc/ghi csdl ( Đăng )
     - bổ sung chức năng xuất file theo nhu cầu (tối đa 50 từ) để có thể chơi game theo chế độ luyện tập theo ngày (đăng)
    
-  Nhiệm vụ trước mắt :
-    - Tạo khung chương trình đồ họa , hoàn thiện phiên bản cmd
-    - chạy được phiên bản cmd với file 100 từ , đọc/ghi dòng lệnh 
+  - Nhiệm vụ trước mắt :
+  - 
+    [0] Tạo khung chương trình đồ họa , hoàn thiện phiên bản cmd
+    [1] chạy được phiên bản cmd với file 100 từ , đọc/ghi dòng lệnh 
 
-  Quy tắc code : 
-    - phải comment trước mọi hàm , ghi hàm đó làm gì , các biến tham số đóng vai trò gì 
-    - đặt tên biến dài , có nghĩa 
-    - code cách thưa chút cho dễ nhìn , debug
+ - Quy tắc code :
+ - 
+    [0] phải comment trước mọi hàm , ghi hàm đó làm gì , các biến tham số đóng vai trò gì 
+    [1] đặt tên biến dài , có nghĩa 
+    [2] code cách thưa chút cho dễ nhìn , debug
     
