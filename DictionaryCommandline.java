@@ -5,7 +5,7 @@ public class DictionaryCommandline {
 
     DictionaryManagement dictionaryManagement = new DictionaryManagement();
     Scanner scanner = new Scanner(System.in);
-    
+
     /**
      * in ra man hinh commandline theo format
      *
