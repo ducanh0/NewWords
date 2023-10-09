@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    private MyDictionary dict = new MyDictionary(); // quan ly 1 quyen tu dien
-
     DictionaryManagement dictionaryManagement = new DictionaryManagement();
     Scanner scanner = new Scanner(System.in);
 
@@ -44,7 +42,7 @@ public class DictionaryCommandline {
      */
 
     public void dictionaryAdvanced() {
-        dictionaryManagement.insertFromFile();
+        //dictionaryManagement.insertFromFile("dictionaries.txt");
         System.out.println("Welcome to My Application!");
         System.out.println("[0] Exit");
         System.out.println("[1] Add");
@@ -85,7 +83,7 @@ public class DictionaryCommandline {
                 // run game
                 break;
             case 8:
-                dictionaryManagement.insertFromFile();
+                dictionaryManagement.insertFromFile("dictionaries.txt");
                 break;
             case 9:
                 dictionaryManagement.dictionaryExportToFile();

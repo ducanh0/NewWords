@@ -1,5 +1,6 @@
 import jdk.jshell.execution.DirectExecutionControl;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Scanner;
@@ -42,14 +43,6 @@ public class DictionaryManagement {
     }
 
     /**
-     * nhap du lieu tu tep dictionaries.txt (trong tep nay thi , moi dong co tu tieng anh + nghia tieng viet , vi du : hello xin chao)
-     */
-
-    public void insertFromFile(){
-
-    }
-
-    /**
      * tra cuu
      * co the thay doi kieu tra ve trong qua trinh code , tra ve danh sach tu vung tim duoc chang han ?
      * cai tien : dung trie de tim kiem ??
@@ -68,11 +61,50 @@ public class DictionaryManagement {
     }
 
     /**
-     * xuat du lieu ra tep
+     * nhap du lieu tu tep dictionaries.txt (trong tep nay thi , moi dong co tu tieng anh + nghia tieng viet cach nhau boi dau tab, vi du : hello   xin chao)
+     */
+
+    public void insertFromFile(String fileName) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split("\t"); // tu tieng Anh tach nghia tieng Viet boi 1 dau tab
+
+                if (parts.length == 2) {
+                    String englishWord = parts[0].trim(); // trim() xoa khoang trang thua
+                    String vietnameseExplanation = parts[1].trim();
+
+                    Word word = new Word(englishWord, vietnameseExplanation);
+                    dictionary.addWord(word);
+                }
+            }
+
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * xuat du lieu ra tep DictionaryExport.txt
      */
 
     public void dictionaryExportToFile(){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("DictionaryExport.txt"));
 
+            for (Word x : dictionary.getListWords()) {
+                bw.write(x.getWord_target() + "\t" + String.join(", ", x.getWord_explain()));
+                bw.newLine();
+            }
+
+            bw.close();
+            System.out.println("Du lieu tu dien da duoc xuat ra tep DictionaryExport.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
