@@ -25,23 +25,26 @@ public class MyDictionary {
 
     Node root ; // nut goc
     private ArrayList<Word> listWords;
+    private Trie trie;
 
     /**
      * Constructor.
      */
     public MyDictionary() {
         listWords = new ArrayList<>();
+        trie = new Trie();
     }
 
     public ArrayList<Word> getListWords() {
-        return listWords;
+        return trie.convertToArrayList();
     }
 
     /**
      * them tu moi vao tu dien
      */
     public void addWord(Word word) {
-        listWords.add(word);
+        //listWords.add(word);
+        trie.addWord(word);
     }
 
     /**
@@ -49,7 +52,7 @@ public class MyDictionary {
      */
 
     public void removeWord(Word word) {
-
+        trie.deleteWord(word);
     }
 
     /**
@@ -57,7 +60,15 @@ public class MyDictionary {
      */
 
     public void fixWord(Word oldWord,Word newWord) {
-
+        trie.deleteWord(oldWord);
+        trie.addWord(newWord);
     }
 
+    public Word findWord(String search) {
+        return trie.findWord(search);
+    }
+
+    public ArrayList<Word> findWords(String prefix) {
+        return trie.getByPrefix(prefix);
+    }
 }
