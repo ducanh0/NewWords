@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    DictionaryManagement dictionaryManagement = new DictionaryManagement();
     Scanner scanner = new Scanner(System.in);
+    DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
 
     /**
      * in ra man hinh commandline theo format
@@ -13,16 +13,7 @@ public class DictionaryCommandline {
      * ...
      */
     public void showAllWords(){
-
-    }
-
-    /**
-     * tim kiem tu , dung trie ??
-     * co the thay doi kieu tra ve trong qua trinh code cho phu hop
-     */
-
-    public void dictionarySearcher(){
-
+        dictionaryManagement.showAllWords();
     }
 
     /**
@@ -55,42 +46,51 @@ public class DictionaryCommandline {
         System.out.println("[8] Import from file");
         System.out.println("[9] Export to file");
         System.out.print("Your action: ");
-        int act = scanner.nextInt();
 
-        switch (act) {
-            case 0:
-                System.exit(0);
-                break;
-            case 1:
-                dictionaryManagement.addWord();
-                break;
-            case 2:
-                dictionaryManagement.removeWord();
-                break;
-            case 3:
-                dictionaryManagement.adjustWord();
-                break;
-            case 4:
-                dictionaryManagement.showAllWords();
-                break;
-            case 5:
-                dictionaryManagement.dictionaryLookup();
-                break;
-            case 6:
-                dictionarySearcher();
-                break;
-            case 7:
-                // run game
-                break;
-            case 8:
-                dictionaryManagement.insertFromFile("dictionaries.txt");
-                break;
-            case 9:
-                dictionaryManagement.dictionaryExportToFile();
-                break;
-            default:
-                System.out.println("Action not supported");
-                break;
+        while (scanner.hasNext()) {
+            int act = scanner.nextInt();
+
+            switch (act) {
+                case 0:
+                    System.exit(0);
+                    break;
+                case 1:
+                    dictionaryManagement.addWord();
+                    break;
+                case 2:
+                    dictionaryManagement.removeWord();
+                    break;
+                case 3:
+                    dictionaryManagement.adjustWord();
+                    break;
+                case 4:
+                    dictionaryManagement.showAllWords();
+                    break;
+                case 5:
+                    dictionaryManagement.dictionaryLookup();
+                    break;
+                case 6:
+                    dictionaryManagement.searchWords();
+                    break;
+                case 7:
+                    // run game
+                    break;
+                case 8:
+                    dictionaryManagement.insertFromFile("dictionaries.txt");
+                    break;
+                case 9:
+                    dictionaryManagement.dictionaryExportToFile();
+                    break;
+                default:
+                    System.out.println("Action not supported");
+                    break;
+            }
+            System.out.print("Your action:");
         }
+    }
+
+    public static void main(String[] args) {
+        DictionaryCommandline commandline = new DictionaryCommandline();
+        commandline.dictionaryAdvanced();
     }
 }
