@@ -33,8 +33,11 @@ public class Trie {
             current = current.trieNodes[c];
             current.increaseSize();
         }
-        if (current.trieNodes[string.charAt(last) - 'a'] == null)
-            current.trieNodes[string.charAt(last) - 'a'] = new TrieNode(word);
+        //if (current.trieNodes[string.charAt(last) - 'a'] == null)
+        TrieNode leaf = new TrieNode(word);
+        current.trieNodes[string.charAt(last) - 'a'] = leaf;
+        leaf.increaseSize();
+
     }
 
     public ArrayList<Word> getByPrefix(String prefix) {
