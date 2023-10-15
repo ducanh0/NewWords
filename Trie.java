@@ -33,7 +33,8 @@ public class Trie {
             current = current.trieNodes[c];
             current.increaseSize();
         }
-        current.trieNodes[string.charAt(last) - 'a'] = new TrieNode(word);
+        if (current.trieNodes[string.charAt(last) - 'a'] == null)
+            current.trieNodes[string.charAt(last) - 'a'] = new TrieNode(word);
     }
 
     public ArrayList<Word> getByPrefix(String prefix) {
@@ -62,6 +63,13 @@ public class Trie {
         }
     }
 
+    public Word findWord(String search) {
+        TrieNode current = root;
+        for(int i = 0; i < search.length() && current != null; ++i)
+            current = current.trieNodes[search.charAt(i) - 'a'];
+        return current == null ? null: current.getWord();
+    }
+
     /** main for testing. */
     public static void main(String[] args) {
         Word w1 = new Word("a", "một");
@@ -74,5 +82,6 @@ public class Trie {
         trie.deleteWord(w2);
         System.out.println(w1);
         System.out.println(trie.getByPrefix("a"));
+        System.out.println(trie.findWord("be"));
     }
 }
