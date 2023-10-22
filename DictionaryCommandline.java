@@ -33,7 +33,6 @@ public class DictionaryCommandline {
      */
 
     public void dictionaryAdvanced() {
-        //dictionaryManagement.insertFromFile("dictionaries.txt");
         System.out.println("Welcome to My Application!");
         System.out.println("[0] Exit");
         System.out.println("[1] Add");
@@ -85,7 +84,7 @@ public class DictionaryCommandline {
                     System.out.println("Action not supported");
                     break;
             }
-            System.out.print("Your action:");
+            System.out.print("Your action: ");
         }
     }
 

@@ -167,7 +167,7 @@ public class DictionaryManagement {
         int index = 0;
         ArrayList<Word> wordArrayList = dictionary.getListWords();
         System.out.println("Tong so tu: " + wordArrayList.size());
-        System.out.println("No| English     | Vietnamese");
+        System.out.println("No | English     | Vietnamese");
 
         for (Word word: wordArrayList) {
             index++;

@@ -1,2 +1,3 @@
-bye	tam biet
-offer	de xuat
+export	xuat
+hello	xin chao
+insert	chen
