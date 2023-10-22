@@ -76,7 +76,7 @@ public class DictionaryCommandline {
                     // run game
                     break;
                 case 8:
-                    dictionaryManagement.insertFromFile("dictionaries.txt");
+                    dictionaryManagement.insertFromFile("dictionaries.txt", ",");
                     break;
                 case 9:
                     dictionaryManagement.dictionaryExportToFile();

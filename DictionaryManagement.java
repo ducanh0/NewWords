@@ -76,16 +76,18 @@ public class DictionaryManagement {
     }
 
     /**
-     * nhap du lieu tu tep dictionaries.txt (trong tep nay thi , moi dong co tu tieng anh + nghia tieng viet cach nhau boi dau tab, vi du : hello   xin chao)
+     * nhap du lieu tu tep dictionaries.txt (trong tep nay thi
+     * moi dong co tu tieng anh + nghia tieng vietcach nhau boi regex)
+     * @regex la "\t" hoac ","
      */
 
-    public void insertFromFile(String fileName) {
+    public void insertFromFile(String fileName, String regex) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line;
 
             while ((line = br.readLine()) != null) {
-                String[] parts = line.split("\t"); // tu tieng Anh tach nghia tieng Viet boi 1 dau tab
+                String[] parts = line.split(regex);
 
                 if (parts.length >= 2) {
                     String englishWord = parts[0].trim(); // trim() xoa khoang trang thua
@@ -97,6 +99,8 @@ public class DictionaryManagement {
             }
 
             br.close();
+            System.out.println("Du lieu tu dien da duoc lay tu tep");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,6 +121,7 @@ public class DictionaryManagement {
 
             bw.close();
             System.out.println("Du lieu tu dien da duoc xuat ra tep DictionaryExport.txt");
+
         } catch (IOException e) {
             e.printStackTrace();
         }

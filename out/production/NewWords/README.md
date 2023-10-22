@@ -2,13 +2,6 @@
 app support learn English words
 
 information : https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view 
-
-mục tiêu hôm nay :
-  - nắm file yêu cầu
-  - đưa ra các ý tưởng
-
-tóm tắt file yêu cầu : 
-  - 2 phiên bản cmd , đồ họa
     -
           [0] Exit
           [1] Add
@@ -20,16 +13,6 @@ tóm tắt file yêu cầu :
           [7] Game ( game bắn từ Đức Anh )
           [8] Import from file
           [9] Export to file
-    - phát âm , đọc ghi csdl ( 100 nghìn từ )
-    - lấy 100 nghìn từ ( Đăng )
-   
-    - game / đồ họa Đức Anh
-    - csdl Đăng
-    - giao tiếp trung gian Giáp
-   
-  Nhiệm vụ trước mắt :
-    - Tạo khung chương trình 
-    - tạo được phiên bản cmd với file 100 từ 
 
   Quy tắc code : 
   - 
@@ -37,3 +20,18 @@ tóm tắt file yêu cầu :
      [1] đặt tên biến dài , có nghĩa 
      [2] code cách thưa chút cho dễ nhìn , debug
      [3] sửa cái gì thì nên viết vào file readme github này cho mn đều nắm được 
+- format hàm adjustWord:
+    [1] : nhập từ tiếng anh  (ng dùng phải nhập đúng từ trong từ điển , không thì cho người dùng nhập lại)
+    [2] : hiển thị 02 lựa chọn để người dùng chọn
+       -
+             [1]. sửa từ tiếng anh đó (lấy tập nghĩa của từ cũ trong cây trie rồi xóa từ cũ đi , thêm từ mới mà người dùng muốn với tập nghĩa cũ đó)
+             [2]. sửa nghĩa tiếng việt
+              cái này sẽ hiển thị 03 lựa chọn cho người dùng chọn
+                 -
+                       [1]. thêm 01 nghĩa mới
+                       [2] xóa 01 nghĩa cũ (nếu nghĩa người dùng nhập không tồn tại thì in không tồn tại và cho người ta nhập lại nếu muốn)
+                       [3]. sửa 01 nghĩa cũ sang 01 nghĩa mới (cũng bắt ng dùng phải nhập đúng nghĩa cũ thì mới xóa nghĩa cũ , không thì kệ , nghĩa mới thì thêm vào là xong thôi)
+
+  lưu ý : chỉ xử lý đúng 01 thao tác một lúc cho đơn giản , người dùng kiểu muốn sửa hay xóa hay thêm nhiều lần thì thực hiện nhiều lần
+                
+              
