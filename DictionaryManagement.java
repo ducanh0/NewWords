@@ -171,6 +171,7 @@ public class DictionaryManagement {
 
         for (Word word: wordArrayList) {
             index++;
+            System.out.print(" ");
             System.out.printf("%-2d",index);
             System.out.println("| " + word.toString());
         }
@@ -181,8 +182,14 @@ public class DictionaryManagement {
         System.out.println("Tien to can tim: ");
         scanner.nextLine();
         String prefix = scanner.nextLine();
+
         int index = 0;
-        for (Word word: dictionary.findWords(prefix)) {
+        ArrayList<Word> ans = dictionary.findWords(prefix);
+        if(ans == null){
+            System.out.println("Khong tim thay tu nao");
+            return;
+        }
+        for (Word word: ans) {
             index++;
             System.out.printf("%-2d",index);
             System.out.println("| " + word.toString());

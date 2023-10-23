@@ -43,8 +43,12 @@ public class Trie {
     public ArrayList<Word> getByPrefix(String prefix) {
         TrieNode current = root;
         convert = new ArrayList<>();
-        for (int i = 0; i < prefix.length(); ++i)
+        for (int i = 0; i < prefix.length(); ++i){
+            if(current.trieNodes[prefix.charAt(i) - 'a'] == null){
+                return null;
+            }
             current = current.trieNodes[prefix.charAt(i) - 'a'];
+        }
         recursiveGetAll(current);
         return convert;
     }
@@ -54,7 +58,7 @@ public class Trie {
         String string = word.getWord_target().toLowerCase();
         TrieNode[] trace = new TrieNode[string.length()];
         for (int i = 0; i < string.length(); ++i) {
-            if (current == null) return;
+            if (current == null || current.trieNodes[string.charAt(i) - 'a'] == null) return;
             current = current.trieNodes[string.charAt(i) - 'a'];
             trace[i] = current;
         }
@@ -81,9 +85,17 @@ public class Trie {
     }
 
     public Word findWord(String search) {
+   //     System.out.println("??" );
+
         TrieNode current = root;
-        for(int i = 0; i < search.length() && current != null; ++i)
+        for(int i = 0; i < search.length() && current != null; ++i){
+            if(current.trieNodes[search.charAt(i) - 'a'] == null) {
+                current = null;
+                break;
+            }
             current = current.trieNodes[search.charAt(i) - 'a'];
+        }
+
         return current == null ? null: current.getWord();
     }
 
