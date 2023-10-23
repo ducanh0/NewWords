@@ -41,11 +41,12 @@ public class Word {
      */
     public void adjustMeaning(String oldMeaning,String newMeaning){
         for(int i  = 0;i < word_explain.size();i ++){
-            String str = word_explain.get(i) ;
+          //  String str = word_explain.get(i) ;
 
-            if(str.equals(oldMeaning)) {
-                word_explain.set(i , word_explain.remove(word_explain.size() - 1)) ;
-                break;
+            if(word_explain.get(i).equals(oldMeaning)) {
+                word_explain.remove(i) ;
+                i -- ;
+               // break;
             }
         }
 

@@ -58,12 +58,26 @@ public class Trie {
             current = current.trieNodes[string.charAt(i) - 'a'];
             trace[i] = current;
         }
-        for (int i = string.length() - 1; i >= 0; --i) {
+
+        TrieNode pre = root;
+        for(int i = 0;i < string.length();i ++){
+            int tmp = trace[i].decreaseSize();
+            int nhanh = (string.charAt(i) - 'a');
+
+            if(tmp == 0){
+                pre.trieNodes[nhanh] = null;
+                break;
+            }
+
+            pre = pre.trieNodes[nhanh];
+        }
+
+       /** for (int i = string.length() - 1; i >= 0; --i) {
             int tmp = trace[i].decreaseSize();
             if (tmp == 0) {
                 trace[i].word = null;
             }
-        }
+        }*/
     }
 
     public Word findWord(String search) {
