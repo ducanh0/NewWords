@@ -1,9 +1,12 @@
+package main;
+
 public class TrieNode {
     public static final int ABC_SIZE = 26;
     Word word;
     TrieNode[] trieNodes;
 
     int count;
+    boolean finish = false;
 
     public TrieNode(Word word) {
         this.word = word;

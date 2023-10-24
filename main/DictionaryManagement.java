@@ -1,3 +1,5 @@
+package main;
+
 import edu.princeton.cs.algs4.In;
 
 import java.io.BufferedReader;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 
 /**
  * quan ly them, sua, xoa bang cmd, file , database ??
- * tim kiem tu vung , goi den MyDictionary
+ * tim kiem tu vung , goi den main.MyDictionary
  */
 public class DictionaryManagement {
 
@@ -60,7 +62,7 @@ public class DictionaryManagement {
         System.out.print("Nhap tu can tra: ");
         scanner.nextLine();
         String lookUpWord = scanner.nextLine();
-//        for (Word x : dictionary.getListWords()) {
+//        for (main.Word x : dictionary.getListWords()) {
 //            if (x.getWord_target().equals(lookUpWord)) {
 //                System.out.print(x.getWord_target());
 //                System.out.print(" co nghia la: ");
@@ -164,9 +166,9 @@ public class DictionaryManagement {
         System.out.print("Nhap nghia moi cua tu: ");
         String explain = scanner.nextLine();
 
-        dictionary.removeWord(new Word(word, null));
-        dictionary.addWord(new Word(word, explain));
-//        dictionary.fixWord(new Word(word, null), new Word(word, explain));*/
+        dictionary.removeWord(new main.Word(word, null));
+        dictionary.addWord(new main.Word(word, explain));
+//        dictionary.fixWord(new main.Word(word, null), new main.Word(word, explain));*/
 
        System.out.println("Ban co 02 lua chon:\n [0] Sua 01 tu tieng anh da ton tai\n [1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
         System.out.print("Lua chon cua ban: ");

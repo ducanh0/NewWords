@@ -1,4 +1,4 @@
-import java.util.Dictionary;
+package main;
 
 /**
  * dieu phoi ung dung

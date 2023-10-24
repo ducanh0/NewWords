@@ -32,7 +32,7 @@ Copyright (C) 2011 Plausible Labs Cooperative, Inc.
 Copyright (C) 2002  Ranjit Mathew
 Copyright (C) 2002  Bo Thorsen
 Copyright (C) 2002  Roger Sayle
-Copyright (C) 2013  The Written Word, Inc.
+Copyright (C) 2013  The Written main.Word, Inc.
 Copyright (C) 2002-2007  Bo Thorsen <bo@suse.de>
 
 ```

@@ -9,7 +9,7 @@ information : https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/
           [3] Update
           [4] Display
           [5] Lookup
-          [6] Search ( Trie )
+          [6] Search ( main.Trie )
           [7] Game ( game bắn từ Đức Anh )
           [8] Import from file
           [9] Export to file

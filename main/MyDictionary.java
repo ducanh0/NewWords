@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 /**
@@ -6,7 +8,7 @@ import java.util.ArrayList;
  */
 public class MyDictionary {
 
-    //Word [] arr ;
+    //main.Word [] arr ;
 
     class Node{
         private ArrayList<String> meaning ; // nghia cua tu (neu ket thuc tai node nay)
@@ -59,7 +61,7 @@ public class MyDictionary {
      * sua du lieu tu vung
      */
 
-    public void fixWord(Word oldWord,Word newWord) {
+    public void fixWord(Word oldWord, Word newWord) {
         trie.deleteWord(oldWord);
         trie.addWord(newWord);
     }

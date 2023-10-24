@@ -97,7 +97,7 @@ property of their respective owners.
 
 ----------------------------------------------------------------------
 
-Chinese/Japanese Word Break Dictionary Data (cjdict.txt)
+Chinese/Japanese main.Word Break Dictionary Data (cjdict.txt)
 
  #     The Google Chrome software developed by Google is licensed under
  # the BSD license. Other software included in this distribution is
@@ -303,7 +303,7 @@ Chinese/Japanese Word Break Dictionary Data (cjdict.txt)
 
 ----------------------------------------------------------------------
 
-Lao Word Break Dictionary Data (laodict.txt)
+Lao main.Word Break Dictionary Data (laodict.txt)
 
  # Copyright (C) 2016 and later: Unicode, Inc. and others.
  # License & terms of use: http://www.unicode.org/copyright.html
@@ -345,7 +345,7 @@ Lao Word Break Dictionary Data (laodict.txt)
 
 ----------------------------------------------------------------------
 
-Burmese Word Break Dictionary Data (burmesedict.txt)
+Burmese main.Word Break Dictionary Data (burmesedict.txt)
 
  #  Copyright (c) 2014 International Business Machines Corporation
  #  and others. All Rights Reserved.
@@ -366,7 +366,7 @@ Burmese Word Break Dictionary Data (burmesedict.txt)
  #  disclaimer in the documentation and/or other materials provided
  #  with the distribution.
  #
- #    Neither the name Myanmar Karen Word Lists, nor the names of its
+ #    Neither the name Myanmar Karen main.Word Lists, nor the names of its
  #    contributors may be used to endorse or promote products derived
  #    from this software without specific prior written permission.
  #
