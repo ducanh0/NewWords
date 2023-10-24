@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -5,15 +6,24 @@ import java.util.ArrayList;
  */
 public class Word {
     private String word_target ; // tu vung tieng anh
-    private ArrayList<String> word_explain; // nghia tieng viet
+    private ArrayList<String> word_explain = new ArrayList<>(); // nghia tieng viet
 
     /**
      * Constructor.
      */
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
-        this.word_explain = new ArrayList<>();
-        this.word_explain.add(word_explain);
+        if(! this.word_explain.contains(word_explain)) this.word_explain.add(word_explain);
+    }
+
+    public Word(String word_target, ArrayList<String> word_explain){
+        this.word_target = word_target;
+      //  if(word_explain != null)
+            this.word_explain = word_explain;
+    }
+
+    public Word(String word_target){
+        this.word_target = word_target;
     }
 
     public String getWord_target() {
@@ -29,7 +39,12 @@ public class Word {
     }
 
     public void setWord_explain(String word_explain) {
-        this.word_explain.add(word_explain);
+        if(this.word_explain == null){
+            this.word_explain = new ArrayList<>();
+        }
+        if(! this.word_explain.contains(word_explain)) {
+            this.word_explain.add(word_explain);
+        }
     }
 
     /**
@@ -61,7 +76,7 @@ public class Word {
                 append("| ").
                 append(word_explain.get(0));
         for (int i = 1; i < word_explain.size(); ++i) {
-            result.append("\n            | ").append(word_explain.get(i));
+            result.append("\n   |             | ").append(word_explain.get(i));
         }
         return  result.toString();
     }

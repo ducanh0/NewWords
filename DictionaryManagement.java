@@ -1,3 +1,5 @@
+import edu.princeton.cs.algs4.In;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -145,14 +147,18 @@ public class DictionaryManagement {
      */
     public void removeWord() {
         System.out.print("Nhap tu can xoa: ");
-        dictionary.removeWord(new Word(scanner.next(), null));
+        dictionary.removeWord(new Word(scanner.next()));
     }
 
     /**
      * sua du lieu tu vung
+     * [0] sua tu tieng anh
+     * [1] sua nghia tieng viet
+     *         [0] them nghia moi
+     *         [1] xoa nghia cu
      */
     public void adjustWord() {
-        scanner.nextLine();
+       /** scanner.nextLine();
         System.out.print("Nhap tu can sua: ");
         String word = scanner.nextLine();
         System.out.print("Nhap nghia moi cua tu: ");
@@ -160,7 +166,132 @@ public class DictionaryManagement {
 
         dictionary.removeWord(new Word(word, null));
         dictionary.addWord(new Word(word, explain));
-//        dictionary.fixWord(new Word(word, null), new Word(word, explain));
+//        dictionary.fixWord(new Word(word, null), new Word(word, explain));*/
+
+       System.out.println("Ban co 02 lua chon:\n [0] Sua 01 tu tieng anh da ton tai\n [1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
+        System.out.print("Lua chon cua ban: ");
+        int act = scanner.nextInt();
+
+        switch (act){
+            case 0 : {
+                System.out.println("Hay nhap tu tieng anh ban muon sua:");
+                scanner.nextLine();
+                do{
+
+                    String old = scanner.nextLine();
+
+                  //  System.out.println("?? " + old);
+
+                    if(old.equals("-1")){
+                        break;
+                    }
+
+                    Word x = dictionary.findWord(old);
+                    if (x != null) {
+                        System.out.println("Nhap tu tieng anh moi, tap hop nghia tieng viet cua tu tieng anh moi se la tap hop nghia tieng viet cua tu tieng anh cu");
+                        System.out.println("[CHU Y] Tu tieng anh moi phai khac tu tieng anh cu");
+
+                       // scanner.nextLine();
+                        String newWord = scanner.nextLine();
+
+                       // System.out.println("?? " + newWord);
+
+                        if(! newWord.equals(old)){
+                            dictionary.fixWord(x, new Word(newWord, x.getWord_explain()));
+                        } else {
+                            System.out.println("Tu tieng anh moi giong het tu tieng anh cu, thao tac khong hop le, hay thu lai neu muon");
+                        }
+
+                        break;
+                    } else {
+                        System.out.println("Tu nay khong ton tai, hay thu lai neu muon, nhap -1 neu muon dung lai");
+                    }
+                }while (true);
+
+                break;
+            }
+            case 1 : {
+                System.out.println("Nhap tu tieng anh ban can sua nghia tieng viet:");
+
+                do{
+                    scanner.nextLine();
+                    String old = scanner.nextLine();
+
+                 //   System.out.println("?? " + old);
+
+                    if(old.equals("-1")){
+                        break;
+                    }
+
+                    Word x = dictionary.findWord(old);
+                    if (x != null) {
+                        System.out.println("Ban co 02 lua chon\n [0] Them 01 nghia tieng viet moi\n [1] Xoa nghia tieng viet cu");
+
+                        int actt = scanner.nextInt();
+
+                        switch (actt){
+                            case 0 : {
+                                System.out.println("Nhap nghia tieng viet moi can them vao:");
+                                scanner.nextLine();
+                                String newMeaning = scanner.nextLine();
+
+                                x.setWord_explain(newMeaning);
+
+                                break;
+                            }
+                            case 1 : {
+                                System.out.println("Cac nghia tieng viet hien tai:");
+                                for(int i = 0;i < x.getWord_explain().size();i ++){
+                                    System.out.println("[" + i + "] " + x.getWord_explain().get(i));
+                                }
+
+                                if(x.getWord_explain().size() == 1){
+                                    System.out.println("[CHU Y] Tu hien tai chi co 01 nghia tieng viet, khong the xoa, hay bo sung them nghia moi truoc khi xoa");
+                                } else {
+                                    System.out.println("Nhap nhung chi so cua nghia tieng viet ban muon xoa, nhap -1 de dung lai");
+
+                                    ArrayList<Integer> arr = new ArrayList<>();
+                                    do{
+                                        int id = scanner.nextInt();
+
+                                        if(id == -1){
+                                            break;
+                                        }
+
+                                        if((id >= 0) && (id < x.getWord_explain().size())){
+                                            arr.add(id);
+                                        }
+                                    }while (true);
+
+                                    int slTuDaXoa = 0;
+
+                                    for(int i = 0;i < x.getWord_explain().size();i ++){
+                                        if(arr.contains(i + slTuDaXoa)){
+                                            x.getWord_explain().remove(i);
+                                            i --; slTuDaXoa ++ ;
+                                        }
+                                    }
+                                }
+
+                                break;
+                            }
+                            default:{
+                                System.out.println("Thao tac khong hop le, hay thu lai neu muon");
+                            }
+                        }
+
+                        break;
+                    } else {
+                        System.out.println("Tu nay khong ton tai, hay thu lai neu muon, nhap -1 neu muon dung lai");
+                    }
+                }while (true);
+
+                break;
+            }
+            default: {
+                System.out.println("Thao tac khong hop le, hay thu lai neu muon");
+            }
+        }
     }
 
     public void showAllWords() {

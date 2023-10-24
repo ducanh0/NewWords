@@ -1,3 +1,0 @@
-export	xuat
-hello	xin chao
-insert	chen
