@@ -1,12 +1,6 @@
 package main;
 
-import edu.princeton.cs.algs4.In;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -62,6 +56,7 @@ public class DictionaryManagement {
         System.out.print("Nhap tu can tra: ");
         scanner.nextLine();
         String lookUpWord = scanner.nextLine();
+        if(lookUpWord.isEmpty()) return;
 //        for (main.Word x : dictionary.getListWords()) {
 //            if (x.getWord_target().equals(lookUpWord)) {
 //                System.out.print(x.getWord_target());
@@ -140,7 +135,7 @@ public class DictionaryManagement {
         String word = scanner.nextLine();
         System.out.print("Nhap nghia tieng Viet: ");
         String explanation = scanner.nextLine();
-        if (!word.isEmpty())
+        if (!word.isEmpty() && !explanation.isEmpty())
             dictionary.addWord(new Word(word, explanation));
     }
 
@@ -198,10 +193,10 @@ public class DictionaryManagement {
 
                        // System.out.println("?? " + newWord);
 
-                        if(! newWord.equals(old)){
+                        if(! newWord.isEmpty() && ! newWord.equals(old)){
                             dictionary.fixWord(x, new Word(newWord, x.getWord_explain()));
                         } else {
-                            System.out.println("Tu tieng anh moi giong het tu tieng anh cu, thao tac khong hop le, hay thu lai neu muon");
+                            System.out.println("Thao tac khong hop le, hay thu lai neu muon");
                         }
 
                         break;
@@ -237,7 +232,7 @@ public class DictionaryManagement {
                                 scanner.nextLine();
                                 String newMeaning = scanner.nextLine();
 
-                                x.setWord_explain(newMeaning);
+                                if(!newMeaning.isEmpty()) x.setWord_explain(newMeaning);
 
                                 break;
                             }
@@ -301,6 +296,7 @@ public class DictionaryManagement {
         ArrayList<Word> wordArrayList = dictionary.getListWords();
         System.out.println("Tong so tu: " + wordArrayList.size());
         System.out.println("No | English     | Vietnamese");
+        System.out.println("-----------------------------");
 
         for (Word word: wordArrayList) {
             index++;
@@ -315,6 +311,8 @@ public class DictionaryManagement {
         System.out.println("Tien to can tim: ");
         scanner.nextLine();
         String prefix = scanner.nextLine();
+
+        if(prefix.isEmpty()) return;
 
         int index = 0;
         ArrayList<Word> ans = dictionary.findWords(prefix);

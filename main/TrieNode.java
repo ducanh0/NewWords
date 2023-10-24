@@ -6,12 +6,10 @@ public class TrieNode {
     TrieNode[] trieNodes;
 
     int count;
-    boolean finish = false;
 
     public TrieNode(Word word) {
         this.word = word;
         this.trieNodes = new TrieNode[ABC_SIZE];
-        this.count = 1;
     }
 
     public TrieNode() {

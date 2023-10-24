@@ -45,7 +45,6 @@ public class MyDictionary {
      * them tu moi vao tu dien
      */
     public void addWord(Word word) {
-        //listWords.add(word);
         trie.addWord(word);
     }
 

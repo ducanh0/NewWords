@@ -24,6 +24,9 @@ public class Trie {
     }
 
     public void addWord(Word word) {
+        if(word == null || word.getWord_target() == null
+                || word.getWord_target().isEmpty() || word.getWord_explain() == null) return;
+
         String string = word.getWord_target().toLowerCase();
         TrieNode current = root;
         int last = string.length() - 1;
@@ -39,10 +42,10 @@ public class Trie {
         TrieNode leaf = new TrieNode(word);
         current.trieNodes[string.charAt(last) - 'a'] = leaf;
         leaf.increaseSize();
-
     }
 
     public ArrayList<Word> getByPrefix(String prefix) {
+        if(prefix == null || prefix.isEmpty()) return null;
         TrieNode current = root;
         convert = new ArrayList<>();
         for (int i = 0; i < prefix.length(); ++i){
@@ -56,6 +59,9 @@ public class Trie {
     }
 
     public void deleteWord(Word word) {
+        if(word == null || word.getWord_target() == null
+                || word.getWord_target().isEmpty() || word.getWord_explain() == null) return;
+
         TrieNode current = root;
         String string = word.getWord_target().toLowerCase();
         TrieNode[] trace = new TrieNode[string.length()];
@@ -65,17 +71,21 @@ public class Trie {
             trace[i] = current;
         }
 
-        TrieNode pre = root;
+        if(! current.isLeaf()){
+            return;
+        }
+
+        current = root;
         for(int i = 0;i < string.length();i ++){
             int tmp = trace[i].decreaseSize();
             int nhanh = (string.charAt(i) - 'a');
 
             if(tmp == 0){
-                pre.trieNodes[nhanh] = null;
+                current.trieNodes[nhanh] = null;
                 break;
             }
 
-            pre = pre.trieNodes[nhanh];
+            current = current.trieNodes[nhanh];
         }
 
        /** for (int i = string.length() - 1; i >= 0; --i) {
@@ -88,6 +98,7 @@ public class Trie {
 
     public Word findWord(String search) {
    //     System.out.println("??" );
+        if(search == null || search.isEmpty()) return null;
 
         TrieNode current = root;
         for(int i = 0; i < search.length() && current != null; ++i){
