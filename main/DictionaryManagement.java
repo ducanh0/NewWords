@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.javafx.binding.StringFormatter;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -294,17 +295,21 @@ public class DictionaryManagement {
     public void showAllWords() {
         int index = 0;
         ArrayList<Word> wordArrayList = dictionary.getListWords();
+        int size = wordArrayList.size();
+        int lenSize = Math.max((int) Math.log10(size) + 1, 2);
         System.out.println("Tong so tu: " + wordArrayList.size());
-        System.out.println("No | English     | Vietnamese");
+
+        System.out.printf("%" + lenSize + "s", "No ");
+        System.out.println("| English     | Vietnamese");
         System.out.println("-----------------------------");
 
         for (Word word: wordArrayList) {
             index++;
-            System.out.print(" ");
-            System.out.printf("%-2d",index);
+            System.out.printf("%" + lenSize + "d ", index);
             System.out.println("| " + word.toString());
         }
     }
+
 
     /** tim kiem tu bang trie.*/
     public void searchWords() {
@@ -320,9 +325,13 @@ public class DictionaryManagement {
             System.out.println("Khong tim thay tu nao");
             return;
         }
+        int len = Math.max(2, (int) Math.log10(ans.size()) + 1);
+        System.out.printf("%" + len + "s", "No ");
+        System.out.println("| English     | Vietnamese");
+        System.out.println("-----------------------------");
         for (Word word: ans) {
             index++;
-            System.out.printf("%-2d",index);
+            System.out.printf("%" + len + "d ",index);
             System.out.println("| " + word.toString());
         }
     }
