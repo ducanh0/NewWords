@@ -1,6 +1,5 @@
 package main;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +14,7 @@ public class Word {
      */
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
-        if(! this.word_explain.contains(word_explain))
+        if(!this.word_explain.contains(word_explain))
             this.word_explain.add(word_explain);
     }
 
@@ -76,6 +75,18 @@ public class Word {
                 append(word_explain.get(0));
         for (int i = 1; i < word_explain.size(); ++i) {
             result.append("\n   |             | ").append(word_explain.get(i));
+        }
+        return  result.toString();
+    }
+
+    public String toString(int pad) {
+        StringBuilder result = new StringBuilder();
+        result.append(String.format("|%-12s", word_target)).
+                append("| ").
+                append(word_explain.get(0));
+        for (int i = 1; i < word_explain.size(); ++i) {
+            result.append(String.format("\n%" + pad + "s",""))
+                    .append("|             | ").append(word_explain.get(i));
         }
         return  result.toString();
     }

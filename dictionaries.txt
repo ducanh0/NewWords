@@ -1,0 +1,2 @@
+multiply,nhân
+subtract,chia

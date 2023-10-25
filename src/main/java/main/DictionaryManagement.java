@@ -305,7 +305,11 @@ public class DictionaryManagement {
         for (Word word: wordArrayList) {
             index++;
             System.out.printf("%" + lenSize + "d ", index);
+<<<<<<< HEAD
             System.out.println("| " + word.toString());
+=======
+            System.out.println(word.toString(lenSize + 1));
+>>>>>>> b773cc7eb2b8e293c2d24228247621333fcb6463
         }
     }
 
@@ -331,7 +335,11 @@ public class DictionaryManagement {
         for (Word word: ans) {
             index++;
             System.out.printf("%" + len + "d ",index);
+<<<<<<< HEAD
             System.out.println("| " + word.toString());
+=======
+            System.out.println(word.toString(len + 1));
+>>>>>>> b773cc7eb2b8e293c2d24228247621333fcb6463
         }
     }
 }
