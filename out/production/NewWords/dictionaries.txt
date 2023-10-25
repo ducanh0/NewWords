@@ -1,3 +1,0 @@
-hello, xin chao
-insert, chen
-export, xuat
