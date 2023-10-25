@@ -3,6 +3,7 @@ module com.example.newwords {
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.base;
+    requires com.almasb.fxgl.all;
 
 
     opens com.example.newwords to javafx.fxml;

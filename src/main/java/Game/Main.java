@@ -1,69 +1,34 @@
 package Game;
 
-import javafx.application.Application;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
+import com.almasb.fxgl.app.GameApplication;
+import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.dsl.FXGL;
+import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.Objects;
+public class Main extends GameApplication {
 
+    private static final int HEIGHT = 800;
+    private static final int WIDTH = 1500;
 
-public class Main extends Application
-{
-    public static void main(String[] args)
-    {
-        launch(args);
+    @Override
+    protected void initSettings(GameSettings settings) {
+        settings.setWidth(WIDTH);
+        settings.setHeight(HEIGHT);
+        settings.setTitle("NewWords");
+     //   settings.setVersion("00");
     }
 
     @Override
-    public void start(Stage theStage) throws Exception
-    {
-        theStage.setTitle( "Canvas Example" );
+    protected void initUI() {
+        Label label = new Label("Halo, banana!");
+        Font font = Font.loadFont("file:data/font/chu8.ttf", 50);
+       // System.out.println("?? " + (font == null));
+        label.setFont(font); // Font.font(20.0)
+        FXGL.addUINode(label, 350.0, 290.0);
+    }
 
-
-
-        Text text = new Text(50 , 50, "Halo banana!");
-        Font theFont = Font.loadFont( Main.class.getResource("../../../../data/font/chu5.ttf").toExternalForm(),  100 );
-        System.out.println("" + (theFont == null));
-        text.setFont(theFont);
-
-//        InputStream is = Main.class.getResourceAsStream("data/font/chu5.ttf");
-//        Font font = Font.loadFont(is, 12.0);
-//        System.out.println("Font: " + (font == null));
-//        File f = new File(Objects.requireNonNull(Main.class.getResource("data/font/chu5.ttf")).toURI());
-//        // should not be used because of f.toURL() is deprecated
-//        Font font1 = Font.loadFont(f.toURL().toExternalForm(), 12.0);
-//        System.out.println("Font 1: " + (font1 == null));
-//        Font font2 = Font.loadFont(f.toURI().toURL().toExternalForm(), 12.0);
-//        System.out.println("Font 2: " + (font2 == null));
-////
-//        Group root = new Group();
-//        Scene theScene = new Scene();
-//        theStage.setScene( theScene );
-////
-//        Canvas canvas = new Canvas( 400, 200 );
-//        root.getChildren().add( canvas );
-//
-//        GraphicsContext gc = canvas.getGraphicsContext2D();
-//
-//        gc.setFill( Color.RED );
-//        gc.setStroke( Color.BLACK );
-//        gc.setLineWidth(2);
-//
-//        gc.setFont( theFont );
-//        gc.fillText( "Hello, World!", 60, 50 );
-//        gc.strokeText( "Hello, World!", 60, 50 );
-
-//        Image earth = new Image( "E:\\IT\\oop + dsa\\NewWords\\data\\image\\bullet.png" );
-//        gc.drawImage( earth, 180, 100 );
-//
-//        theStage.show();
+    public static void main(String[] args) {
+        launch(args);
     }
 }
