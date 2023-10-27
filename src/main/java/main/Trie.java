@@ -98,7 +98,7 @@ public class Trie {
 
             if(tmp == 0){
                 current.trieNodes[nhanh] = null;
-                break;
+                return;
             }
 
             current = current.trieNodes[nhanh];
