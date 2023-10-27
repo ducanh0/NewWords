@@ -16,12 +16,16 @@ public class TrieNode {
         this.trieNodes = new TrieNode[ABC_SIZE];
     }
 
+    public void setWord(Word word){
+        this.word = word;
+    }
+
     public int getCount() {
         return count;
     }
 
     public boolean isLeaf() {
-        return word != null;
+        return (word != null);
     }
 
     public Word getWord() {

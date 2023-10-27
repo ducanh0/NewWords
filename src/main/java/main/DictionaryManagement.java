@@ -41,8 +41,9 @@ public class DictionaryManagement {
             System.out.print("Nhap nghia tieng Viet: ");
             String vietnameseMeaning = scanner.nextLine();
 
-            Word word = new Word(englishWord, vietnameseMeaning);
-            dictionary.addWord(word);
+            if(! englishWord.isEmpty() && ! vietnameseMeaning.isEmpty()){
+                dictionary.addWord(new Word(englishWord, vietnameseMeaning));
+            }
         }
     }
 
@@ -55,6 +56,7 @@ public class DictionaryManagement {
     public void dictionaryLookup() {
         System.out.print("Nhap tu can tra: ");
         scanner.nextLine();
+
         String lookUpWord = scanner.nextLine();
         if (lookUpWord.isEmpty()) return;
 
@@ -126,10 +128,13 @@ public class DictionaryManagement {
      */
     public void addWord() {
         scanner.nextLine();
+
         System.out.print("Nhap tu tieng Anh: ");
         String word = scanner.nextLine();
+
         System.out.print("Nhap nghia tieng Viet: ");
         String explanation = scanner.nextLine();
+
         if (!word.isEmpty() && !explanation.isEmpty())
             dictionary.addWord(new Word(word, explanation));
     }
@@ -139,7 +144,9 @@ public class DictionaryManagement {
      */
     public void removeWord() {
         System.out.print("Nhap tu can xoa: ");
-        dictionary.removeWord(new Word(scanner.next()));
+
+        String old = scanner.next();
+        dictionary.removeWord(new Word(old));
     }
 
     /**
@@ -229,6 +236,7 @@ public class DictionaryManagement {
                                     if (id == -1) {
                                         break;
                                     }
+
                                     if ((id >= 0) && (id < x.getWord_explain().size())) {
                                         arr.add(id);
                                     }
@@ -301,14 +309,18 @@ public class DictionaryManagement {
 
         int index = 0;
         ArrayList<Word> ans = dictionary.findWords(prefix);
+
         if(ans == null){
             System.out.println("Khong tim thay tu nao");
             return;
         }
+
         int len = Math.max(2, (int) Math.log10(ans.size()) + 1);
+
         System.out.printf("%" + len + "s", "No ");
         System.out.println("| English     | Vietnamese");
         System.out.println("-----------------------------");
+
         for (Word word: ans) {
             index++;
             System.out.printf("%" + len + "d ",index);

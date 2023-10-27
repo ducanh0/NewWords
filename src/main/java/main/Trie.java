@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class Trie {
     private TrieNode root;
 
-    private ArrayList<Word> convert;
+    private ArrayList<Word> convert = new ArrayList<>();
     public Trie() {
         root = new TrieNode();
     }
 
     public ArrayList<Word> convertToArrayList() {
         convert = new ArrayList<>();
+
         recursiveGetAll(root);
         return convert;
     }
@@ -19,6 +20,7 @@ public class Trie {
     private void recursiveGetAll(TrieNode u) {
         if (u == null) return;
         if (u.isLeaf()) convert.add(u.getWord());
+
         for (TrieNode tN: u.getTrieNodes())
             recursiveGetAll(tN);
     }
@@ -30,18 +32,20 @@ public class Trie {
         String string = word.getWord_target().toLowerCase();
         TrieNode current = root;
         int last = string.length() - 1;
-        for (int i = 0; i < last; ++i)
-        {
+
+        for (int i = 0; i <= last; ++i) {
             int c = string.charAt(i)  - 'a';
-            if (current.trieNodes[c] == null)
+
+            if (current.trieNodes[c] == null){
                 current.trieNodes[c] = new TrieNode();
+            }
+            if(i == last) {
+                current.trieNodes[c].setWord(word);
+            }
+
             current = current.trieNodes[c];
             current.increaseSize();
         }
-
-        TrieNode leaf = new TrieNode(word);
-        current.trieNodes[string.charAt(last) - 'a'] = leaf;
-        leaf.increaseSize();
     }
 
     public ArrayList<Word> getByPrefix(String prefix) {
@@ -51,11 +55,15 @@ public class Trie {
         convert = new ArrayList<>();
 
         for (int i = 0; i < prefix.length(); ++i){
-            if(current.trieNodes[prefix.charAt(i) - 'a'] == null){
+            int nhanh = prefix.charAt(i) - 'a';
+
+            if(current.trieNodes[nhanh] == null){
                 return null;
             }
-            current = current.trieNodes[prefix.charAt(i) - 'a'];
+
+            current = current.trieNodes[nhanh];
         }
+
         recursiveGetAll(current);
         return convert;
     }
@@ -65,13 +73,17 @@ public class Trie {
                 || word.getWord_target().isEmpty() || word.getWord_explain() == null) return;
 
         TrieNode current = root;
+
         String string = word.getWord_target().toLowerCase();
         TrieNode[] trace = new TrieNode[string.length()];
+
         for (int i = 0; i < string.length(); ++i) {
-            if (current == null || current.trieNodes[string.charAt(i) - 'a'] == null)
+            int nhanh = string.charAt(i) - 'a';
+
+            if (current.trieNodes[nhanh] == null)
                 return;
 
-            current = current.trieNodes[string.charAt(i) - 'a'];
+            current = current.trieNodes[nhanh];
             trace[i] = current;
         }
 
@@ -91,18 +103,23 @@ public class Trie {
 
             current = current.trieNodes[nhanh];
         }
+
+        current.setWord(null);
     }
 
     public Word findWord(String search) {
         if(search == null || search.isEmpty()) return null;
 
         TrieNode current = root;
-        for(int i = 0; i < search.length() && current != null; ++i){
-            if(current.trieNodes[search.charAt(i) - 'a'] == null) {
+        for(int i = 0; i < search.length(); ++i){
+            int nhanh = search.charAt(i) - 'a';
+
+            if(current.trieNodes[nhanh] == null) {
                 current = null;
                 break;
             }
-            current = current.trieNodes[search.charAt(i) - 'a'];
+
+            current = current.trieNodes[nhanh];
         }
 
         return current == null ? null: current.getWord();
@@ -110,16 +127,6 @@ public class Trie {
 
     /** main for testing. */
     public static void main(String[] args) {
-        Word w1 = new Word("a", "một");
-        Word w2 = new Word("at", "tại");
-        w1.setWord_explain("chữ A");
-        Trie trie = new Trie();
-        trie.addWord(w1);
-        trie.addWord(w2);
-        trie.addWord(new Word("be", "là"));
-        trie.deleteWord(w2);
-        System.out.println(w1);
-        System.out.println(trie.getByPrefix("a"));
-        System.out.println(trie.findWord("be"));
+
     }
 }

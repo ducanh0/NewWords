@@ -7,25 +7,6 @@ import java.util.ArrayList;
  * cai tien len dung trie de quan ly
  */
 public class MyDictionary {
-
-    //main.Word [] arr ;
-
-    class Node{
-        private ArrayList<String> meaning ; // nghia cua tu (neu ket thuc tai node nay)
-        private Node [] nxt ; // mang con tro den cac node con
-
-        private int cnt ; // so tu di qua no
-
-        private char link ; // ki tu ma tu node cha di den no
-
-        Node(char link){
-            this.link = link;
-        }
-
-
-    }
-
-    Node root ; // nut goc
     private ArrayList<Word> listWords;
     private Trie trie;
 
@@ -45,6 +26,9 @@ public class MyDictionary {
      * them tu moi vao tu dien
      */
     public void addWord(Word word) {
+        if(word == null || word.getWord_target() == null
+                || word.getWord_explain() == null || word.getWord_target().isEmpty()) return;
+
         trie.addWord(word);
     }
 
@@ -53,6 +37,9 @@ public class MyDictionary {
      */
 
     public void removeWord(Word word) {
+        if(word == null || word.getWord_target() == null
+           || word.getWord_target().isEmpty()) return;
+
         trie.deleteWord(word);
     }
 
@@ -66,10 +53,14 @@ public class MyDictionary {
     }
 
     public Word findWord(String search) {
+        if(search == null || search.isEmpty()) return null;
+
         return trie.findWord(search);
     }
 
     public ArrayList<Word> findWords(String prefix) {
+        if(prefix == null || prefix.isEmpty()) return null;
+
         return trie.getByPrefix(prefix);
     }
 }

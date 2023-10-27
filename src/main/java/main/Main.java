@@ -7,7 +7,6 @@ package main;
  */
 public class Main {
     public static void main(String[] args) {
-        DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
-        dictionaryCommandline.dictionaryAdvanced();
+        DictionaryCommandline.main(args);
     }
 }
