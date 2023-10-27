@@ -56,14 +56,8 @@ public class DictionaryManagement {
         System.out.print("Nhap tu can tra: ");
         scanner.nextLine();
         String lookUpWord = scanner.nextLine();
-        if(lookUpWord.isEmpty()) return;
-//        for (main.Word x : dictionary.getListWords()) {
-//            if (x.getWord_target().equals(lookUpWord)) {
-//                System.out.print(x.getWord_target());
-//                System.out.print(" co nghia la: ");
-//                System.out.println(x.getWord_explain());
-//            }
-//        }
+        if (lookUpWord.isEmpty()) return;
+
         Word x = dictionary.findWord(lookUpWord);
         if (x != null) {
             System.out.print(x.getWord_target());
@@ -77,6 +71,7 @@ public class DictionaryManagement {
     /**
      * nhap du lieu tu tep dictionaries.txt (trong tep nay thi
      * moi dong co tu tieng anh + nghia tieng vietcach nhau boi regex)
+     *
      * @regex la "\t" hoac ","
      */
 
@@ -109,7 +104,7 @@ public class DictionaryManagement {
      * xuat du lieu ra tep DictionaryExport.txt
      */
 
-    public void dictionaryExportToFile(){
+    public void dictionaryExportToFile() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("DictionaryExport.txt", false));
 
@@ -151,35 +146,22 @@ public class DictionaryManagement {
      * sua du lieu tu vung
      * [0] sua tu tieng anh
      * [1] sua nghia tieng viet
-     *         [0] them nghia moi
-     *         [1] xoa nghia cu
+     * [0] them nghia moi
+     * [1] xoa nghia cu
      */
     public void adjustWord() {
-       /** scanner.nextLine();
-        System.out.print("Nhap tu can sua: ");
-        String word = scanner.nextLine();
-        System.out.print("Nhap nghia moi cua tu: ");
-        String explain = scanner.nextLine();
-
-        dictionary.removeWord(new main.Word(word, null));
-        dictionary.addWord(new main.Word(word, explain));
-//        dictionary.fixWord(new main.Word(word, null), new main.Word(word, explain));*/
-
-       System.out.println("Ban co 02 lua chon:\n [0] Sua 01 tu tieng anh da ton tai\n [1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
+        System.out.println("Ban co 02 lua chon:\n [0] Sua 01 tu tieng anh da ton tai\n [1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
         System.out.print("Lua chon cua ban: ");
-        int act = scanner.nextInt();
 
-        switch (act){
-            case 0 : {
+        int act = scanner.nextInt();
+        switch (act) {
+            case 0: {
                 System.out.println("Hay nhap tu tieng anh ban muon sua:");
                 scanner.nextLine();
-                do{
 
+                do {
                     String old = scanner.nextLine();
-
-                  //  System.out.println("?? " + old);
-
-                    if(old.equals("-1")){
+                    if (old.equals("-1")) {
                         break;
                     }
 
@@ -188,101 +170,93 @@ public class DictionaryManagement {
                         System.out.println("Nhap tu tieng anh moi, tap hop nghia tieng viet cua tu tieng anh moi se la tap hop nghia tieng viet cua tu tieng anh cu");
                         System.out.println("[CHU Y] Tu tieng anh moi phai khac tu tieng anh cu");
 
-                       // scanner.nextLine();
                         String newWord = scanner.nextLine();
 
-                       // System.out.println("?? " + newWord);
-
-                        if(! newWord.isEmpty() && ! newWord.equals(old)){
+                        if (!newWord.isEmpty() && !newWord.equals(old)) {
                             dictionary.fixWord(x, new Word(newWord, x.getWord_explain()));
                         } else {
                             System.out.println("Thao tac khong hop le, hay thu lai neu muon");
                         }
 
                         break;
+
                     } else {
                         System.out.println("Tu nay khong ton tai, hay thu lai neu muon, nhap -1 neu muon dung lai");
                     }
-                }while (true);
+                }while (true) ;
 
                 break;
             }
-            case 1 : {
+            case 1: {
                 System.out.println("Nhap tu tieng anh ban can sua nghia tieng viet:");
+                scanner.nextLine();
 
-                do{
-                    scanner.nextLine();
+                do {
                     String old = scanner.nextLine();
-
-                 //   System.out.println("?? " + old);
-
-                    if(old.equals("-1")){
+                    if (old.equals("-1")) {
                         break;
                     }
 
                     Word x = dictionary.findWord(old);
                     if (x != null) {
                         System.out.println("Ban co 02 lua chon\n [0] Them 01 nghia tieng viet moi\n [1] Xoa nghia tieng viet cu");
+                        System.out.print("Lua chon cua ban : ");
 
                         int actt = scanner.nextInt();
-
-                        switch (actt){
-                            case 0 : {
+                        switch (actt) {
+                            case 0: {
                                 System.out.println("Nhap nghia tieng viet moi can them vao:");
                                 scanner.nextLine();
-                                String newMeaning = scanner.nextLine();
 
-                                if(!newMeaning.isEmpty()) x.setWord_explain(newMeaning);
+                                String newMeaning = scanner.nextLine();
+                                if (!newMeaning.isEmpty()) x.setWord_explain(newMeaning);
 
                                 break;
                             }
-                            case 1 : {
+                            case 1: {
                                 System.out.println("Cac nghia tieng viet hien tai:");
-                                for(int i = 0;i < x.getWord_explain().size();i ++){
+
+                                for (int i = 0; i < x.getWord_explain().size(); i++) {
                                     System.out.println("[" + i + "] " + x.getWord_explain().get(i));
                                 }
 
-                                if(x.getWord_explain().size() == 1){
-                                    System.out.println("[CHU Y] Tu hien tai chi co 01 nghia tieng viet, khong the xoa, hay bo sung them nghia moi truoc khi xoa");
-                                } else {
-                                    System.out.println("Nhap nhung chi so cua nghia tieng viet ban muon xoa, nhap -1 de dung lai");
+                                System.out.println("Nhap nhung chi so cua nghia tieng viet ban muon xoa, nhap -1 de dung lai");
+                                System.out.println("[CHU Y] Neu tu tieng anh bi xoa het tat ca cac nghia tieng viet thi no se bi xoa khoi csdl");
 
-                                    ArrayList<Integer> arr = new ArrayList<>();
-                                    do{
-                                        int id = scanner.nextInt();
+                                ArrayList<Integer> arr = new ArrayList<>();
+                                do {
+                                    int id = scanner.nextInt();
+                                    if (id == -1) {
+                                        break;
+                                    }
+                                    if ((id >= 0) && (id < x.getWord_explain().size())) {
+                                        arr.add(id);
+                                    }
+                                } while (true);
 
-                                        if(id == -1){
-                                            break;
-                                        }
-
-                                        if((id >= 0) && (id < x.getWord_explain().size())){
-                                            arr.add(id);
-                                        }
-                                    }while (true);
-
-                                    int slTuDaXoa = 0;
-
-                                    for(int i = 0;i < x.getWord_explain().size();i ++){
-                                        if(arr.contains(i + slTuDaXoa)){
-                                            x.getWord_explain().remove(i);
-                                            i --; slTuDaXoa ++ ;
-                                        }
+                                int slTuDaXoa = 0;
+                                for (int i = 0; i < x.getWord_explain().size(); i++) {
+                                    if (arr.contains(i + slTuDaXoa)) {
+                                        x.getWord_explain().remove(i);
+                                        i--;
+                                        slTuDaXoa++;
                                     }
                                 }
 
+                                if(x.getWord_explain().isEmpty()){
+                                    dictionary.removeWord(x);
+                                }
                                 break;
                             }
-                            default:{
+                            default: {
                                 System.out.println("Thao tac khong hop le, hay thu lai neu muon");
                             }
                         }
-
                         break;
                     } else {
                         System.out.println("Tu nay khong ton tai, hay thu lai neu muon, nhap -1 neu muon dung lai");
                     }
-                }while (true);
-
+                } while (true);
                 break;
             }
             default: {
@@ -293,9 +267,12 @@ public class DictionaryManagement {
 
     public void showAllWords() {
         int index = 0;
+
         ArrayList<Word> wordArrayList = dictionary.getListWords();
         int size = wordArrayList.size();
+
         int lenSize = Math.max((int) Math.log10(size) + 1, 2);
+
         System.out.println("Tong so tu: " + wordArrayList.size());
 
         System.out.printf("%" + lenSize + "s", "No ");
@@ -305,11 +282,11 @@ public class DictionaryManagement {
         for (Word word: wordArrayList) {
             index++;
             System.out.printf("%" + lenSize + "d ", index);
-<<<<<<< HEAD
+
             System.out.println("| " + word.toString());
-=======
-            System.out.println(word.toString(lenSize + 1));
->>>>>>> b773cc7eb2b8e293c2d24228247621333fcb6463
+
+          //  System.out.println(word.toString(lenSize + 1));
+
         }
     }
 
@@ -335,11 +312,11 @@ public class DictionaryManagement {
         for (Word word: ans) {
             index++;
             System.out.printf("%" + len + "d ",index);
-<<<<<<< HEAD
+
             System.out.println("| " + word.toString());
-=======
-            System.out.println(word.toString(len + 1));
->>>>>>> b773cc7eb2b8e293c2d24228247621333fcb6463
+
+         //   System.out.println(word.toString(len + 1));
+
         }
     }
 }
