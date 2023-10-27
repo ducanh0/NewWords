@@ -14,7 +14,8 @@ public class Word {
      */
     public Word(String word_target, String word_explain) {
         this.word_target = word_target;
-        if(!this.word_explain.contains(word_explain))
+
+        if(!(word_explain == null || word_explain.isEmpty()) && !this.word_explain.contains(word_explain))
             this.word_explain.add(word_explain);
     }
 
@@ -40,30 +41,14 @@ public class Word {
     }
 
     public void setWord_explain(String word_explain) {
+        if(word_explain == null || word_explain.isEmpty()) return;
+
         if(this.word_explain == null){
             this.word_explain = new ArrayList<>();
         }
         if(! this.word_explain.contains(word_explain)) {
             this.word_explain.add(word_explain);
         }
-    }
-
-    /**
-     * sua y nghia
-     * for trau de xoa
-     * khi tim duoc oldMeaning , swap vs thang cuoi arraylist -> xoa thang cuoi arraylist
-     *
-     * khi bo sung y nghia -> khong phai xoa thang nao -> cho oldMeaning  = "??"
-     */
-    public void adjustMeaning(String oldMeaning,String newMeaning){
-        for(int i  = 0;i < word_explain.size();i ++){
-            if(word_explain.get(i).equals(oldMeaning)) {
-                word_explain.remove(i) ;
-                i -- ;
-            }
-        }
-
-        word_explain.add(newMeaning);
     }
 
     /** Show a word in dictionary, use for testing. */

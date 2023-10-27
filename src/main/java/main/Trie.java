@@ -70,7 +70,7 @@ public class Trie {
 
     public void deleteWord(Word word) {
         if(word == null || word.getWord_target() == null
-                || word.getWord_target().isEmpty() || word.getWord_explain() == null) return;
+                || word.getWord_target().isEmpty()) return;
 
         TrieNode current = root;
 

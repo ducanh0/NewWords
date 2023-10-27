@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * cai tien len dung trie de quan ly
  */
 public class MyDictionary {
-    private ArrayList<Word> listWords;
+    private ArrayList<Word> listWords = new ArrayList<>();
     private Trie trie;
 
     /**
