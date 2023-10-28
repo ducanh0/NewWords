@@ -1,5 +1,8 @@
 package main;
 
+import Hangman.Hangman;
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
@@ -74,7 +77,12 @@ public class DictionaryCommandline {
                     dictionaryManagement.searchWords();
                     break;
                 case 7:
-                    // run game
+                    Hangman hangman = new Hangman();
+                    try {
+                        hangman.run();
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
                 case 8:
                     dictionaryManagement.insertFromFile("dictionaries.txt", ",");
