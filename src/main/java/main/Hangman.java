@@ -1,4 +1,4 @@
-package Hangman;
+package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;

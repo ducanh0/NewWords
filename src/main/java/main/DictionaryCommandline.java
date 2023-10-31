@@ -1,7 +1,5 @@
 package main;
 
-import Hangman.Hangman;
-
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
