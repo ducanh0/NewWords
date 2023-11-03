@@ -1,2 +1,35 @@
-multiply,nhân
-subtract,chia
+multiply, nhân
+subtract, chia
+threat, đe dọa
+attack, tấn công
+defense, phòng thủ
+maneuver, điều động
+position, vị trí
+immediate, ngay lập tức
+force, ép buộc
+diagonal, đường chéo
+develop, phát triển
+exchange, trao đổi
+opponent, đối thủ
+capture, chiếm lấy
+access, truy cập
+active, tích cực
+passive, bị động
+precise, chính xác
+improve, cải thiện
+typical, đặc trưng
+occupy, kiểm soát
+rush, vội vàng
+loose, lỏng lẻo
+skewer, xiên
+promote, thăng cấp
+resign, đầu hàng
+strategy, chiến lược
+foresee, thấy trước
+sacrifice, hy sinh
+advantage, lợi thế
+perpetual, vĩnh viễn
+solid, chắc chắn
+fortress, pháo đài
+blockade, phong tỏa
+stalemate, bế tắc
