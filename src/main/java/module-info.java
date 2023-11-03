@@ -1,4 +1,4 @@
-module com.example.newwords {
+open module com.example.newwords {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
@@ -6,9 +6,9 @@ module com.example.newwords {
     requires com.almasb.fxgl.all;
 
 
-    opens com.example.newwords to javafx.fxml;
-    exports com.example.newwords;
-
-    opens Game to javafx.fxml;
-    exports Game;
+//    opens com.example.newwords to javafx.fxml;
+//    exports com.example.newwords;
+//
+//    opens Game to javafx.fxml;
+//    exports Game;
 }
