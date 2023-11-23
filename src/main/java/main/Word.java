@@ -55,24 +55,26 @@ public class Word {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append(String.format("%-12s", word_target)).
-                append("| ").
-                append(word_explain.get(0));
+        result.append(String.format("%-20s", word_target)).
+                append("| ");
+        if(!word_explain.isEmpty())
+            result.append(word_explain.get(0));
         for (int i = 1; i < word_explain.size(); ++i) {
-            result.append("\n   |             | ").append(word_explain.get(i));
+            result.append("\n   |                     | ").append(word_explain.get(i));
         }
         return  result.toString();
     }
 
     public String toString(int pad) {
         StringBuilder result = new StringBuilder();
-        result.append(String.format("|%-12s", word_target)).
-                append("| ").
-                append(word_explain.get(0));
+        result.append(String.format("| %-20s", word_target)).
+                append("| ");
+        if(!word_explain.isEmpty())
+            result.append(word_explain.get(0));
         for (int i = 1; i < word_explain.size(); ++i) {
-            result.append(String.format("\n%" + pad + "s",""))
-                    .append("|             | ").append(word_explain.get(i));
+            result.append(String.format("\n%" + pad + "s"," "))
+                    .append(" |                     | ").append(word_explain.get(i));
         }
-        return  result.toString();
+        return result.toString();
     }
 }
