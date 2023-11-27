@@ -1,5 +1,7 @@
 package main;
 
+import databaseDictionary.DatabaseManager;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -100,6 +102,12 @@ public class DictionaryManagement {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void importFromSQLFile(){
+        DatabaseManager dbi=new DatabaseManager(
+                this.getClass().getResource("copy.db").toString());
+        dbi.importDictionary(dictionary);
     }
 
     /**
@@ -283,17 +291,15 @@ public class DictionaryManagement {
 
         System.out.println("Tong so tu: " + wordArrayList.size());
 
-        System.out.printf("%" + lenSize + "s", "No ");
-        System.out.println("| English     | Vietnamese");
-        System.out.println("-----------------------------");
+        System.out.printf("%" + lenSize + "s ", "No");
+        System.out.println("| English             | Vietnamese");
+        System.out.println("----------------------------------");
 
         for (Word word: wordArrayList) {
             index++;
             System.out.printf("%" + lenSize + "d ", index);
 
-            System.out.println("| " + word.toString());
-
-          //  System.out.println(word.toString(lenSize + 1));
+            System.out.println(word.toString(lenSize));
 
         }
     }
@@ -317,17 +323,15 @@ public class DictionaryManagement {
 
         int len = Math.max(2, (int) Math.log10(ans.size()) + 1);
 
-        System.out.printf("%" + len + "s", "No ");
-        System.out.println("| English     | Vietnamese");
-        System.out.println("-----------------------------");
+        System.out.printf("%" + len + "s ", "No");
+        System.out.println("| English             | Vietnamese");
+        System.out.println("----------------------------------");
 
         for (Word word: ans) {
             index++;
             System.out.printf("%" + len + "d ",index);
 
-            System.out.println("| " + word.toString());
-
-         //   System.out.println(word.toString(len + 1));
+            System.out.println(word.toString(len));
 
         }
     }
