@@ -14,10 +14,13 @@ public class DictionaryManagement {
 
     MyDictionary dictionary;
     Scanner scanner;
+    DatabaseManager dbi;
 
     public DictionaryManagement(Scanner scanner) {
         this.dictionary = new MyDictionary();
         this.scanner = scanner;
+        this.dbi = new DatabaseManager(
+                getClass().getResource("copy.db").toString());
     }
 
     /**
@@ -105,7 +108,7 @@ public class DictionaryManagement {
     }
 
     public void importFromSQLFile(){
-        DatabaseManager dbi=new DatabaseManager(
+        dbi = new DatabaseManager(
                 this.getClass().getResource("copy.db").toString());
         dbi.importDictionary(dictionary);
     }
@@ -143,8 +146,11 @@ public class DictionaryManagement {
         System.out.print("Nhap nghia tieng Viet: ");
         String explanation = scanner.nextLine();
 
-        if (!word.isEmpty() && !explanation.isEmpty())
-            dictionary.addWord(new Word(word, explanation));
+        if (!word.isEmpty() && !explanation.isEmpty()) {
+            Word newWord = new Word(word, explanation);
+            dictionary.addWord(newWord);
+            dbi.insert(newWord);
+        }
     }
 
     /**
@@ -155,6 +161,7 @@ public class DictionaryManagement {
 
         String old = scanner.next();
         dictionary.removeWord(new Word(old));
+        dbi.delete(old);
     }
 
     /**
@@ -165,7 +172,9 @@ public class DictionaryManagement {
      * [1] xoa nghia cu
      */
     public void adjustWord() {
-        System.out.println("Ban co 02 lua chon:\n [0] Sua 01 tu tieng anh da ton tai\n [1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
+        System.out.println("Ban co 02 lua chon:\n " +
+                "[0] Sua 01 tu tieng anh da ton tai\n " +
+                "[1] Sua nghia tieng viet cua 01 tu tieng anh da ton tai");
         System.out.print("Lua chon cua ban: ");
 
         int act = scanner.nextInt();
@@ -188,7 +197,10 @@ public class DictionaryManagement {
                         String newWord = scanner.nextLine();
 
                         if (!newWord.isEmpty() && !newWord.equals(old)) {
-                            dictionary.fixWord(x, new Word(newWord, x.getWord_explain()));
+                            Word replaceWord = new Word(newWord, x.getWord_explain());
+                            dictionary.fixWord(x, replaceWord);
+                            dbi.delete(old);
+                            dbi.insert(replaceWord);
                         } else {
                             System.out.println("Thao tac khong hop le, hay thu lai neu muon");
                         }
@@ -214,7 +226,9 @@ public class DictionaryManagement {
 
                     Word x = dictionary.findWord(old);
                     if (x != null) {
-                        System.out.println("Ban co 02 lua chon\n [0] Them 01 nghia tieng viet moi\n [1] Xoa nghia tieng viet cu");
+                        System.out.println("Ban co 02 lua chon\n" +
+                                " [0] Them 01 nghia tieng viet moi\n" +
+                                " [1] Xoa nghia tieng viet cu");
                         System.out.print("Lua chon cua ban : ");
 
                         int actt = scanner.nextInt();
@@ -224,7 +238,10 @@ public class DictionaryManagement {
                                 scanner.nextLine();
 
                                 String newMeaning = scanner.nextLine();
-                                if (!newMeaning.isEmpty()) x.setWord_explain(newMeaning);
+                                if (!newMeaning.isEmpty()) {
+                                    x.setWord_explain(newMeaning);
+                                    dbi.update(x);
+                                }
 
                                 break;
                             }
@@ -261,7 +278,9 @@ public class DictionaryManagement {
 
                                 if(x.getWord_explain().isEmpty()){
                                     dictionary.removeWord(x);
+                                    dbi.delete(x.getWord_target());
                                 }
+                                else dbi.update(x);
                                 break;
                             }
                             default: {
