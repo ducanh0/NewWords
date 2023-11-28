@@ -92,6 +92,10 @@ public class endgame {
             FXGL.addUINode(lb, 215, pre - 10);
         }
 
+//        for(int i = 0;i < 60;i ++){
+//            Main.arr.add(FXGL.random(5.0, 100.0));
+//        }
+
         if(Main.totalTypes % 5 != 0){
             Main.arr.add(100.0 * Main.correctTypes / Main.totalTypes);
         }

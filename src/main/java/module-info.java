@@ -7,7 +7,7 @@ open module com.example.newwords {
     requires org.apache.httpcomponents.httpclient;
     requires json.simple;
     requires org.apache.httpcomponents.httpcore;
-
+    requires java.xml;
 
 //    opens com.example.newwords to javafx.fxml;
 //    exports com.example.newwords;

@@ -71,7 +71,7 @@ public class ingame {
 
         // run game
         runInGame = getGameTimer().runAtInterval(() -> {
-            if(Main.correctTypes == 0 && Main.totalTypes > 10){
+            if(Main.correctTypes == 0 && Main.totalTypes > 0){
                 FXGL.play("maindie.wav");
                 getInput().mockKeyPress(KeyCode.ESCAPE);
             }
