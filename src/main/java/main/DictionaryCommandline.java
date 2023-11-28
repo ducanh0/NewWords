@@ -48,6 +48,7 @@ public class DictionaryCommandline {
         System.out.println("[8] Import from file");
         System.out.println("[9] Export to file");
         System.out.print("Your action: ");
+        dictionaryManagement.importFromSQLFile();
 
         while (scanner.hasNext()) {
             int act = scanner.nextInt();

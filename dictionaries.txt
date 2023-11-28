@@ -33,3 +33,74 @@ solid, chắc chắn
 fortress, pháo đài
 blockade, phong tỏa
 stalemate, bế tắc
+love, tình yêu
+heart, trái tim
+affection, sự quan tâm
+passion, đam mê
+romance, lãng mạn
+commitment, cam kết
+devotion, sự hiến dâng
+connection, mối liên kết
+intimacy, gần gũi
+admiration, sự ngưỡng mộ
+tenderness, sự dịu dàng
+trust, sự tin tưởng
+joy, niềm vui
+happiness, hạnh phúc
+soulmate, tri kỷ
+unity, sự đoàn kết
+understanding, sự hiểu biết
+warmth, sự ấm áp
+support, sự hỗ trợ
+companionship, sự đồng hành
+war, chiến tranh
+conflict, xung đột
+violence, bạo lực
+battle, trận chiến
+aggression, sự xâm lược
+destruction, sự phá hủy
+hostility, thù địch
+combat, chiến đấu
+casualties, tử vong
+devastation, sự tàn phá
+oppression, sự áp bức
+resistance, sự kháng cự
+warfare, chiến thuật
+enemy, kẻ thù
+peacekeeping, duy trì hòa bình
+truce, ngừng bắn
+alliance, liên minh
+retribution, sự trừng phạt
+turmoil, sự hỗn loạn
+technology, công nghệ
+computer, máy tính
+internet, mạng internet
+software, phần mềm
+hardware, phần cứng
+programming, lập trình
+cybersecurity, an ninh mạng
+data, dữ liệu
+coding, mã hóa
+algorithm, thuật toán
+innovation, sáng tạo
+digital, số hóa
+network, mạng lưới
+encryption, mã hóa
+database, cơ sở dữ liệu
+automation, tự động hóa
+equation, phương trình
+geometry, hình học
+algebra, đại số
+calculation, tính toán
+theorem, định lý
+formula, công thức
+variable, biến số
+probability, xác suất
+mathematics, toán học
+number, số
+lesson, bài học
+curriculum, chương trình học
+exam, kỳ thi
+grade, điểm số
+textbook, sách giáo trình
+assignment, bài tập
