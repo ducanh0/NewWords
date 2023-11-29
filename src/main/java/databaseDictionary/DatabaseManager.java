@@ -37,7 +37,6 @@ public class DatabaseManager {
                     dictionary.addWord(word);
                 }
             }
-            System.out.println(dictionary.getListWords().size());
         } catch (SQLException e) {
             System.out.println("Khong tim thay file");
         }
