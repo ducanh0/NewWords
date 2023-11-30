@@ -58,7 +58,7 @@ public class TextToSpeech {
      * @param text đoạn văn bản cần phát âm
      * @param languageSpeech ngôn ngữ cần phát âm
      */
-    private static void enterTextToSpeech(String text, String languageSpeech) {
+    public static void enterTextToSpeech(String text, String languageSpeech) {
         TextToSpeech textToSpeech = new TextToSpeech();
         textToSpeech.setLanguageSpeech(languageSpeech);
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newwords.DictionaryController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextField layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="189.0" promptText="Search..." />
+            <ListView layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="233.0" />
+            <Button layoutX="202.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="40.0" prefWidth="45.0" />
+            <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="202.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Definition" />
+            <HBox layoutX="47.0" layoutY="459.0" prefHeight="43.0" prefWidth="528.0">
+               <children>
+                  <Button mnemonicParsing="false" prefWidth="130.0" text="Add">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                  <Button mnemonicParsing="false" prefWidth="130.0" text="Remove">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                  <Button mnemonicParsing="false" prefWidth="130.0" text="Update">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+                  <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic></Button>
+               </children>
+            </HBox>
+            <ListView layoutX="29.0" layoutY="57.0" prefHeight="371.0" prefWidth="563.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

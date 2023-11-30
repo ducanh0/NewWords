@@ -10,7 +10,6 @@ open module com.example.newwords {
     requires jlayer;
     requires java.sql;
 
-
 //    opens com.example.newwords to javafx.fxml;
 //    exports com.example.newwords;
 //
