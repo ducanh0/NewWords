@@ -49,10 +49,10 @@ public class Trie {
     }
 
     public ArrayList<Word> getByPrefix(String prefix) {
-        if(prefix == null || prefix.isEmpty()) return null;
-
-        TrieNode current = root;
         convert = new ArrayList<>();
+        if(prefix == null || prefix.isEmpty()) return convert;
+        prefix = prefix.toLowerCase();
+        TrieNode current = root;
 
         for (int i = 0; i < prefix.length(); ++i){
             int nhanh = prefix.charAt(i) - 'a';
@@ -110,6 +110,7 @@ public class Trie {
     public Word findWord(String search) {
         if(search == null || search.isEmpty()) return null;
 
+        search = search.toLowerCase();
         TrieNode current = root;
         for(int i = 0; i < search.length(); ++i){
             int nhanh = search.charAt(i) - 'a';
