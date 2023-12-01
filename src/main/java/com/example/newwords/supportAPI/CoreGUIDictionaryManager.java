@@ -49,6 +49,7 @@ public class CoreGUIDictionaryManager {
     }
 
     public ArrayList<Word> searchPrefix(String prefix) {
-        return dictionary.findWords(prefix);
+        ArrayList<Word> words = dictionary.findWords(prefix);
+        return (words == null ? new ArrayList<>() : words);
     }
 }
