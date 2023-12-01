@@ -15,7 +15,7 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." onKeyTyped="#search"/>
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..."/>
             <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0"/>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="215.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -28,21 +28,21 @@
             <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" />
             <HBox layoutX="47.0" layoutY="459.0" prefHeight="43.0" prefWidth="528.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="130.0" text="Add">
+                  <Button fx:id="add" mnemonicParsing="false" prefWidth="130.0" text="Add" onAction="#add">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/add.png" />
                            </image></ImageView>
                      </graphic></Button>
-                  <Button mnemonicParsing="false" prefWidth="130.0" text="Remove">
+                  <Button fx:id="remove" mnemonicParsing="false" prefWidth="130.0" text="Remove" onAction="#remove">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/remove.png" />
                            </image></ImageView>
                      </graphic></Button>
-                  <Button mnemonicParsing="false" prefWidth="130.0" text="Update">
+                  <Button fx:id="update" mnemonicParsing="false" prefWidth="130.0" text="Update" onAction="#update">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -1,46 +1,66 @@
 package com.example.newwords;
 
 import com.example.newwords.supportAPI.CoreGUIDictionaryManager;
-import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import main.Word;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class DictionaryController implements Initializable {
     @FXML
     public TextField textField;
     public ListView<String> searchResults;
     public TextArea explanation;
-    ArrayList<Word> arrayList;
-    CoreGUIDictionaryManager core;
-    String[] searchTarget = new String[1];
+    public Button remove;
+    public Button add;
+    public Button update;
+    private ArrayList<Word> arrayList;
+    private CoreGUIDictionaryManager core;
+    int index;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         core = new CoreGUIDictionaryManager();
-        textField.textProperty().addListener(((observableValue, s, t1) -> searchTarget[0] = t1));
+
+        add.setDisable(true);
+
+        textField.textProperty().addListener((observableValue, s, t1) -> {
+            arrayList = core.searchPrefix(t1);
+            List<String> ls = arrayList.stream().map(Word::getWord_target).toList();
+            searchResults.setItems(FXCollections.observableList(ls));
+            add.setDisable(!ls.isEmpty());
+            remove.setDisable(!add.isDisable());
+            update.setDisable(!add.isDisable());
+        });
+
         searchResults.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            ReadOnlyIntegerProperty index =
-                    searchResults.getSelectionModel().selectedIndexProperty();
+            int index = searchResults.getSelectionModel().selectedIndexProperty().get();
+            if (index < 0) return;
             explanation.textProperty().set(
-                    String.join("\n", arrayList.get(index.get()).getWord_explain())
+                    String.join("\n", arrayList.get(index).getWord_explain())
             );
         });
     }
 
-    public void search(KeyEvent keyEvent) {
-        arrayList = core.searchPrefix(searchTarget[0]);
-        List<String> ls = arrayList.stream().map(Word::getWord_target).toList();
-        searchResults.setItems(FXCollections.observableList(ls));
+    public void update(ActionEvent actionEvent) {
+        core.fixExplanations(arrayList.get(index).getWord_target(),
+                Arrays.asList(explanation.textProperty().get().split("\n")));
+    }
+
+    public void remove(ActionEvent actionEvent) {
+        core.delete(arrayList.get(index).getWord_target());
+    }
+
+    public void add(ActionEvent actionEvent) {
+        core.addWord(textField.getText(),
+                Arrays.asList(explanation.getText().split("\n")));
     }
 }
