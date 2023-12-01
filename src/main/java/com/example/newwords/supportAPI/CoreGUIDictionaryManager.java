@@ -1,6 +1,7 @@
 package com.example.newwords.supportAPI;
 
 import databaseDictionary.DatabaseManager;
+import main.Main;
 import main.MyDictionary;
 import main.Word;
 
@@ -11,8 +12,8 @@ public class CoreGUIDictionaryManager {
     DatabaseManager dbm;
     public CoreGUIDictionaryManager()
     {
-        dictionary=new MyDictionary();
-        dbm=new DatabaseManager(this.getClass().getResource("../../copy.db").toString());
+        dictionary = new MyDictionary();
+        dbm = new DatabaseManager(Main.class.getResource("copy.db").toString());
         dbm.importDictionary(dictionary);
     }
     public void addWord(String target, ArrayList<String> explains){
