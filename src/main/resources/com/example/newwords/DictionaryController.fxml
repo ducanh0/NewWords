@@ -15,8 +15,8 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <TextField layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." />
-            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0" />
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." onKeyTyped="#search"/>
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0"/>
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="215.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/search.png" />
