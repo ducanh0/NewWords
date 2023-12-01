@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,20 +15,17 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <TextField layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="189.0" promptText="Search..." />
-            <ListView layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="233.0" />
-            <Button layoutX="202.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchWord" prefHeight="40.0" prefWidth="45.0">
-               <graphic>
-                  <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/search.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
+            <TextField layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." />
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0" />
+            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="215.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/search.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Definition" />
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" />
             <HBox layoutX="47.0" layoutY="459.0" prefHeight="43.0" prefWidth="528.0">
                <children>
                   <Button mnemonicParsing="false" prefWidth="130.0" text="Add">
@@ -57,7 +55,7 @@
                      </graphic></Button>
                </children>
             </HBox>
-            <ListView layoutX="29.0" layoutY="57.0" prefHeight="371.0" prefWidth="563.0" />
+            <TextArea fx:id="explanation" layoutX="29.0" layoutY="57.0" prefHeight="371.0" prefWidth="563.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>
