@@ -3,6 +3,7 @@ package com.example.newwords;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import main.GoogleTranslate;
 
@@ -15,10 +16,10 @@ public class TranslateController implements Initializable {
     GoogleTranslate googleTranslate = new GoogleTranslate();
 
     @FXML
-    private TextField inputText;
+    private TextArea inputText;
 
     @FXML
-    private TextField outputText;
+    private TextArea outputText;
 
     @FXML
     public void translateText(ActionEvent actionEvent) throws Exception {
@@ -27,8 +28,14 @@ public class TranslateController implements Initializable {
     }
 
     @FXML
-    public void pronounceText(ActionEvent actionEvent) throws Exception {
+    public void pronounceTextEnglish(ActionEvent actionEvent) throws Exception {
         enterTextToSpeech(inputText.getText(), "en");
+    }
+
+    @FXML
+    public void pronounceTextVietnamese(ActionEvent actionEvent) throws Exception {
+        String output = googleTranslate.translateText(inputText.getText());
+        enterTextToSpeech(output, "vi");
     }
 
     @Override
