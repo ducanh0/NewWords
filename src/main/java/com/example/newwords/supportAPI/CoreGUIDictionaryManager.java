@@ -6,6 +6,7 @@ import main.MyDictionary;
 import main.Word;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CoreGUIDictionaryManager {
     MyDictionary dictionary;
@@ -16,8 +17,8 @@ public class CoreGUIDictionaryManager {
         dbm = new DatabaseManager(Main.class.getResource("copy.db").toString());
         dbm.importDictionary(dictionary);
     }
-    public void addWord(String target, ArrayList<String> explains){
-        Word word = new Word(target,explains);
+    public void addWord(String target, List<String> explains){
+        Word word = new Word(target,new ArrayList<>(explains));
         dictionary.addWord(word);
     }
 
@@ -29,12 +30,11 @@ public class CoreGUIDictionaryManager {
         dbm.insert(newWord);
     }
 
-    public void fixExplanations(String target, ArrayList<String> meaning,
-                                ArrayList<Boolean> check) {
+    public void fixExplanations(String target, List<String> meaning) {
         Word findWord=dictionary.findWord(target);
         Word newWord = new Word(target);
-        for (int i = 0; i < meaning.size();++i)
-            if (check.get(i)) newWord.setWord_explain(meaning.get(i));
+        for (String s : meaning)
+            newWord.setWord_explain(s);
         dictionary.fixWord(findWord, newWord);
         dbm.update(newWord);
     }
