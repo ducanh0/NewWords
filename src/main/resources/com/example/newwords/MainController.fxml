@@ -18,6 +18,11 @@
                    <fx:include source="TranslateController.fxml" />
                </content>
           </Tab>
+            <Tab fx:id="Game" text="Game">
+              <content>
+                  <fx:include source="GameController.fxml" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

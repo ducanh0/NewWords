@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
@@ -21,6 +22,9 @@ public class MainController implements Initializable {
     @FXML private Tab Dictionary;
 
     @FXML private Tab GoogleTranslate;
+
+    @FXML private Tab Game;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -10,14 +10,14 @@ import org.json.simple.parser.JSONParser;
 import java.util.Scanner;
 
 public class GoogleTranslate {
-    public String translateText(String input) throws Exception {
+    public String translateText(String input, String sl, String tl) throws Exception {
 
         // sl: nguồn ngôn ngữ
         // tl: ngôn ngữ đích
         // q: văn bản cần dịch
         String url = String.format(
                 "https://translate.googleapis.com/translate_a/single?client=gtx&sl=%s&tl=%s&dt=t&q=%s",
-                "en", "vi", java.net.URLEncoder.encode(input, "UTF-8"));
+                sl, tl, java.net.URLEncoder.encode(input, "UTF-8"));
 
         HttpClient httpClient = HttpClients.createDefault();
 
@@ -54,7 +54,7 @@ public class GoogleTranslate {
         Scanner scanner = new Scanner(System.in);
         GoogleTranslate translator = new GoogleTranslate();
         String input = scanner.nextLine();
-        String translation = translator.translateText(input);
+        String translation = translator.translateText(input, "en", "vi");
         System.out.println(translation);
     }
 }
