@@ -12,46 +12,43 @@
 <?import javafx.scene.layout.HBox?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newwords.DictionaryController">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+   <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #E0FFFF;">
          <children>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..."/>
-            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0"/>
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." />
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0" />
             <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="215.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/search.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFF0;">
          <children>
             <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" />
-            <HBox layoutX="47.0" layoutY="459.0" prefHeight="43.0" prefWidth="528.0">
+            <HBox layoutX="90.0" layoutY="467.0" prefHeight="43.0" prefWidth="392.0">
                <children>
-                  <Button fx:id="add" mnemonicParsing="false" prefWidth="130.0" text="Add" onAction="#add">
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="130.0" text="Add">
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/add.png" />
-                           </image></ImageView>
+                              <Image url="@images/16057.png" />
+                           </image>
+                        </ImageView>
                      </graphic></Button>
-                  <Button fx:id="remove" mnemonicParsing="false" prefWidth="130.0" text="Remove" onAction="#remove">
+                  <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefWidth="130.0" text="Remove">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/remove.png" />
                            </image></ImageView>
                      </graphic></Button>
-                  <Button fx:id="update" mnemonicParsing="false" prefWidth="130.0" text="Update" onAction="#update">
+                  <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefWidth="130.0" text="Update">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/edit.png" />
                            </image></ImageView>
-                     </graphic></Button>
-                  <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Button">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" />
                      </graphic></Button>
                </children>
             </HBox>

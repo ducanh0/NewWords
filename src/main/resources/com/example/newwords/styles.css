@@ -1,0 +1,12 @@
+.button {
+    -fx-background-color: aqua;
+}
+
+.button:hover {
+    -fx-background-color: yellow;
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: #ADD8E6;
+    -fx-background-radius: 5 5 0 0;
+}

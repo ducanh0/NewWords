@@ -9,7 +9,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newwords.TranslateController">
    <children>
-      <AnchorPane prefHeight="300.0" prefWidth="900.0">
+      <AnchorPane prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #F0FFF0;">
          <children>
             <TextArea fx:id="inputText" layoutX="48.0" layoutY="117.0" prefHeight="142.0" prefWidth="778.0" />
             <Button layoutX="48.0" layoutY="220.0" mnemonicParsing="false" onAction="#pronounceTextInput" prefHeight="39.0" prefWidth="40.0">
@@ -38,7 +38,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="300.0" prefWidth="900.0">
+      <AnchorPane prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #F0FFF0;">
          <children>
             <TextArea fx:id="outputText" layoutX="48.0" layoutY="66.0" prefHeight="142.0" prefWidth="778.0" />
             <Button layoutX="48.0" layoutY="169.0" mnemonicParsing="false" onAction="#pronounceTextOutput" prefHeight="39.0" prefWidth="40.0">

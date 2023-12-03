@@ -22,7 +22,7 @@ public class GameController implements Initializable {
         Game.Main game = new Game.Main();
         FXGLPane gamePane = Game.Main.embeddedLaunch(game);
         Stage stage = new Stage();
-        stage.setScene(new Scene(gamePane, 1200, 800));
+        stage.setScene(new Scene(gamePane, 1500, 800));
         stage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, windowEvent -> {
             Game.Main.embeddedShutdown();
             Game.pregame.clearPreGame();
