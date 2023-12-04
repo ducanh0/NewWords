@@ -23,7 +23,7 @@ public class TranslateController implements Initializable {
     private TextArea outputText;
 
     public boolean isEnglishText(String input) {
-        return Pattern.matches("^[a-zA-Z\\s]*$", input);
+        return Pattern.matches("^[a-zA-Z\\s'\".,()?;]*$", input);
     }
 
     @FXML

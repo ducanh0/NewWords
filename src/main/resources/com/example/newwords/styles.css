@@ -4,10 +4,39 @@
 }
 
 .button:hover {
-    -fx-background-color: yellow;
+    -fx-background-color: lime;
 }
 
 .tab-pane .tab-header-area .tab:selected {
     -fx-background-color: #ADD8E6;
     -fx-background-radius: 5 5 0 0;
+}
+
+.text-area {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: yellow;
+    -fx-border-width: 2;
+}
+
+.list-view, .text-field {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: aqua;
+    -fx-border-width: 2;
+}
+
+.list-view:focused, .text-field:focused {
+    -fx-border-color: #00FF00;
+}
+
+.tab {
+    -fx-background-color: #B0C4DE;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 17;
+}
+
+.tab:hover {
+    -fx-background-color: #87CEFA;
 }

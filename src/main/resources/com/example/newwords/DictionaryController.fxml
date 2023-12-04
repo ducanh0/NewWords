@@ -22,19 +22,22 @@
                   <Image url="@images/back-in.png" />
                </image>
             </ImageView>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="193.0" promptText="Search..." />
-            <ImageView fitHeight="24.0" fitWidth="48.0" layoutX="177.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="178.0" promptText="Search...">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font></TextField>
+            <ImageView fitHeight="24.0" fitWidth="48.0" layoutX="161.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/search.png" />
                </image>
             </ImageView>
-            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="371.0" prefWidth="236.0" />
-            <ImageView fitHeight="67.0" fitWidth="69.0" layoutX="43.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="65.0" prefHeight="358.0" prefWidth="236.0" />
+            <ImageView fitHeight="67.0" fitWidth="69.0" layoutX="38.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_great_britain_48px.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="73.0" fitWidth="86.0" layoutX="154.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="73.0" fitWidth="86.0" layoutX="159.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_vietnam_48px.png" />
                </image>
@@ -47,26 +50,46 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <ImageView fitHeight="24.0" fitWidth="45.0" layoutX="115.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="121.0" layoutY="510.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="124.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="115.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFF0;">
          <children>
-            <ImageView fitHeight="611.0" fitWidth="1129.0" layoutX="-22.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="611.0" fitWidth="1129.0" layoutX="-23.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/back-in.png" />
                </image>
             </ImageView>
             <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" textFill="#ffee00">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
                <padding>
                   <Insets left="10.0" />
                </padding></Label>
-            <HBox layoutX="115.0" layoutY="465.0" prefHeight="43.0" prefWidth="392.0">
+            <HBox layoutX="104.0" layoutY="465.0" prefHeight="43.0" prefWidth="413.0">
                <children>
-                  <Button fx:id="add" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="130.0" text="Add">
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="130.0" text="Add" textFill="#000000c6">
                      <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/16057.png" />
                            </image>
@@ -74,35 +97,39 @@
                      </graphic>
                      <HBox.margin>
                         <Insets right="10.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefWidth="130.0" text="Remove">
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefWidth="130.0" text="Remove" textFill="#000000c6">
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="31.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/remove.png" />
                            </image></ImageView>
                      </graphic>
                      <HBox.margin>
                         <Insets right="10.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefWidth="130.0" text="Update">
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefWidth="130.0" text="Update" textFill="#000000c6">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/edit.png" />
                            </image></ImageView>
-                     </graphic></Button>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Button>
                </children>
             </HBox>
-            <TextArea fx:id="explanation" layoutX="29.0" layoutY="57.0" prefHeight="371.0" prefWidth="563.0" />
+            <TextArea fx:id="explanation" layoutX="29.0" layoutY="70.0" prefHeight="358.0" prefWidth="563.0" />
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="536.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/main.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="558.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/bullet.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="39.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
@@ -118,6 +145,51 @@
             <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="242.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/ene3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="54.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="64.0" layoutY="531.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="550.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="540.0" layoutY="531.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="230.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="372.0" layoutY="531.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene0.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="45.0" layoutX="525.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="593.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="569.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
                </image>
             </ImageView>
          </children></AnchorPane>
