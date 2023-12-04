@@ -20,6 +20,7 @@ public class CoreGUIDictionaryManager {
     public void addWord(String target, List<String> explains){
         Word word = new Word(target,new ArrayList<>(explains));
         dictionary.addWord(word);
+        dbm.insert(word);
     }
 
     public void fixTarget(String oldTarget, String newTarget) {
