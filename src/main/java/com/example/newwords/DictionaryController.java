@@ -69,7 +69,10 @@ public class DictionaryController implements Initializable {
     }
 
     public void pronounce(ActionEvent event) {
-        String input = textField.getText();
-        enterTextToSpeech(input, "en");
+        int selectedIndex = searchResults.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            String selectedWord = searchResults.getItems().get(selectedIndex);
+            enterTextToSpeech(selectedWord, "en");
+        }
     }
 }
