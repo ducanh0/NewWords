@@ -11,8 +11,18 @@
    <children>
       <AnchorPane prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #F0FFF0;">
          <children>
-            <TextArea fx:id="inputText" layoutX="48.0" layoutY="117.0" prefHeight="142.0" prefWidth="778.0" />
-            <Button layoutX="48.0" layoutY="220.0" mnemonicParsing="false" onAction="#pronounceTextInput" prefHeight="39.0" prefWidth="40.0">
+            <ImageView fitHeight="300.0" fitWidth="861.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="300.0" fitWidth="861.0" layoutX="555.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <TextArea fx:id="inputText" layoutX="57.0" layoutY="117.0" prefHeight="142.0" prefWidth="778.0" />
+            <Button layoutX="57.0" layoutY="220.0" mnemonicParsing="false" onAction="#pronounceTextInput" prefHeight="39.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -21,27 +31,52 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="407.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="416.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_google_translate_48px.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="495.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="528.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_vietnam_48px.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="311.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="66.0" fitWidth="60.0" layoutX="290.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_great_britain_48px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="121.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="636.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="29.0" layoutX="745.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #F0FFF0;">
          <children>
-            <TextArea fx:id="outputText" layoutX="48.0" layoutY="66.0" prefHeight="142.0" prefWidth="778.0" />
-            <Button layoutX="48.0" layoutY="169.0" mnemonicParsing="false" onAction="#pronounceTextOutput" prefHeight="39.0" prefWidth="40.0">
+            <ImageView fitHeight="374.0" fitWidth="640.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="396.0" fitWidth="640.0" layoutX="373.0" layoutY="-42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <TextArea fx:id="outputText" layoutX="57.0" layoutY="66.0" prefHeight="142.0" prefWidth="778.0" />
+            <Button layoutX="57.0" layoutY="168.0" mnemonicParsing="false" onAction="#pronounceTextOutput" prefHeight="39.0" prefWidth="40.0">
                <graphic>
                   <ImageView fitHeight="27.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -50,7 +85,22 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="389.0" layoutY="-5.0" mnemonicParsing="false" onAction="#translateText" text="Translate" />
+            <Button layoutX="398.0" layoutY="-5.0" mnemonicParsing="false" onAction="#translateText" text="Translate" />
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="648.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="175.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene0.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="231.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene2.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
