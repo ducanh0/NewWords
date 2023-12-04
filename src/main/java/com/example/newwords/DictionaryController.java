@@ -14,6 +14,8 @@ import main.Word;
 import java.net.URL;
 import java.util.*;
 
+import static main.TextToSpeech.enterTextToSpeech;
+
 public class DictionaryController implements Initializable {
     @FXML
     public TextField textField;
@@ -22,6 +24,8 @@ public class DictionaryController implements Initializable {
     public Button remove;
     public Button add;
     public Button update;
+    public Button pronounce;
+
     private ArrayList<Word> arrayList;
     private CoreGUIDictionaryManager core;
     int index;
@@ -62,5 +66,10 @@ public class DictionaryController implements Initializable {
     public void add(ActionEvent actionEvent) {
         core.addWord(textField.getText(),
                 Arrays.asList(explanation.getText().split("\n")));
+    }
+
+    public void pronounce(ActionEvent event) {
+        String input = textField.getText();
+        enterTextToSpeech(input, "en");
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -10,23 +11,58 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newwords.DictionaryController">
    <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #E0FFFF;">
          <children>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" promptText="Search..." />
-            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="479.0" prefWidth="235.0" />
-            <ImageView fitHeight="28.0" fitWidth="24.0" layoutX="215.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="644.0" fitWidth="1123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="193.0" promptText="Search..." />
+            <ImageView fitHeight="24.0" fitWidth="48.0" layoutX="177.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/search.png" />
                </image>
             </ImageView>
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="53.0" prefHeight="371.0" prefWidth="236.0" />
+            <ImageView fitHeight="67.0" fitWidth="69.0" layoutX="43.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_great_britain_48px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="86.0" layoutX="154.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_vietnam_48px.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="pronounce" layoutX="205.0" layoutY="14.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="39.0" prefWidth="33.0">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/speak.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFF0;">
          <children>
-            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" />
-            <HBox layoutX="90.0" layoutY="467.0" prefHeight="43.0" prefWidth="392.0">
+            <ImageView fitHeight="611.0" fitWidth="1129.0" layoutX="-22.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/back-in.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" textFill="#ffee00">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Label>
+            <HBox layoutX="115.0" layoutY="465.0" prefHeight="43.0" prefWidth="392.0">
                <children>
                   <Button fx:id="add" mnemonicParsing="false" onAction="#add" prefHeight="43.0" prefWidth="130.0" text="Add">
                      <graphic>
@@ -35,14 +71,20 @@
                               <Image url="@images/16057.png" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
                   <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefWidth="130.0" text="Remove">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/remove.png" />
                            </image></ImageView>
-                     </graphic></Button>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
                   <Button fx:id="update" mnemonicParsing="false" onAction="#update" prefWidth="130.0" text="Update">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
@@ -53,6 +95,31 @@
                </children>
             </HBox>
             <TextArea fx:id="explanation" layoutX="29.0" layoutY="57.0" prefHeight="371.0" prefWidth="563.0" />
+            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="536.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="16.0" fitWidth="18.0" layoutX="558.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bullet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="39.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/main.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="402.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene1.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="242.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ene3.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
   </items>
 </SplitPane>
