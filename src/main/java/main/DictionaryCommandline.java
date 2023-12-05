@@ -36,7 +36,7 @@ public class DictionaryCommandline {
      */
 
     public void dictionaryAdvanced() {
-        System.out.println("Welcome to My Application!");
+        System.out.println("Welcome to Dictionary Application!");
         System.out.println("[0] Exit");
         System.out.println("[1] Add");
         System.out.println("[2] Remove");

@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 /**
  * dieu phoi ung dung
  * quyet dinh chay phien ban nao , cmd hay do hoa
@@ -7,6 +9,26 @@ package main;
  */
 public class Main {
     public static void main(String[] args) {
-        DictionaryCommandline.main(args);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hãy chọn phiên bản ứng dụng mà bạn muốn chạy!");
+        System.out.println("[0] Chạy bản commandline");
+        System.out.println("[1] Chạy bản đồ họa");
+        System.out.print("Your action: ");
+
+        while (scanner.hasNext()) {
+            int act = scanner.nextInt();
+            if (act == 0) {
+                System.out.println("");
+                System.out.println("**********************************\n");
+                DictionaryCommandline.main(args);
+            } else if (act == 1) {
+                System.out.println("");
+                System.out.println("**********************************\n");
+                com.example.newwords.Main.main(args);
+            } else {
+                System.out.print("Your action must be 0 or 1: ");
+            }
+        }
     }
 }
