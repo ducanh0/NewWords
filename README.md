@@ -1,8 +1,9 @@
 # NewWords
 
 ## Introduction
-app support learn English words
-https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view
+Developing an English learning application using Java
+
+[See details](https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view)
 
 ## Members
   + Nguyen Duc Anh - 22021102
