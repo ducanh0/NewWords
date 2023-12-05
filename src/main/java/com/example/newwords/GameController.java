@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,5 +32,6 @@ public class GameController implements Initializable {
         processBuilder = new ProcessBuilder(javaBin,
                 "-cp", classpath, "-p",
                 modulePath, "-m", "com.example.newwords/" + Game.Main.class.getName());
+        processBuilder.redirectOutput(new File("output.txt"));
     }
 }
