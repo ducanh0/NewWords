@@ -20,15 +20,15 @@ public class CoreGUIDictionaryManager {
     public void addWord(String target, List<String> explains){
         Word word = new Word(target,new ArrayList<>(explains));
         dictionary.addWord(word);
-        dbm.insert(word);
+      //  dbm.insert(word);
     }
 
     public void fixTarget(String oldTarget, String newTarget) {
         Word findWord=dictionary.findWord(oldTarget);
         Word newWord = new Word(newTarget, findWord.getWord_explain());
         dictionary.fixWord(findWord, newWord);
-        dbm.delete(oldTarget);
-        dbm.insert(newWord);
+//        dbm.delete(oldTarget);
+//        dbm.insert(newWord);
     }
 
     public void fixExplanations(String target, List<String> meaning) {
@@ -37,7 +37,7 @@ public class CoreGUIDictionaryManager {
         for (String s : meaning)
             newWord.setWord_explain(s);
         dictionary.fixWord(findWord, newWord);
-        dbm.update(newWord);
+      //  dbm.update(newWord);
     }
 
     public Word search(String target) {
@@ -46,7 +46,7 @@ public class CoreGUIDictionaryManager {
 
     public void delete(String target) {
         dictionary.removeWord(new Word(target));
-        dbm.delete(target);
+       // dbm.delete(target);
     }
 
     public ArrayList<Word> searchPrefix(String prefix) {

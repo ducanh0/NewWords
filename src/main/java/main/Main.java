@@ -16,19 +16,19 @@ public class Main {
         System.out.println("[1] Chạy bản đồ họa");
         System.out.print("Your action: ");
 
-        while (scanner.hasNext()) {
+       // while (scanner.hasNext()) {
             int act = scanner.nextInt();
             if (act == 0) {
-                System.out.println("");
-                System.out.println("**********************************\n");
+               // System.out.println("");
+                System.out.println("\n**********************************\n");
                 DictionaryCommandline.main(args);
             } else if (act == 1) {
-                System.out.println("");
-                System.out.println("**********************************\n");
+             //   System.out.println("");
+                System.out.println("\n**********************************\n");
                 com.example.newwords.Main.main(args);
             } else {
-                System.out.print("Your action must be 0 or 1: ");
+                System.out.print("Your action must be 0 or 1, try again");
             }
         }
-    }
+    //}
 }

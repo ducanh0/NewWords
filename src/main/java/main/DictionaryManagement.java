@@ -149,7 +149,7 @@ public class DictionaryManagement {
         if (!word.isEmpty() && !explanation.isEmpty()) {
             Word newWord = new Word(word, explanation);
             dictionary.addWord(newWord);
-            dbi.insert(newWord);
+         //   dbi.insert(newWord);
         }
     }
 
@@ -161,7 +161,7 @@ public class DictionaryManagement {
 
         String old = scanner.next();
         dictionary.removeWord(new Word(old));
-        dbi.delete(old);
+      //  dbi.delete(old);
     }
 
     /**
@@ -199,8 +199,8 @@ public class DictionaryManagement {
                         if (!newWord.isEmpty() && !newWord.equals(old)) {
                             Word replaceWord = new Word(newWord, x.getWord_explain());
                             dictionary.fixWord(x, replaceWord);
-                            dbi.delete(old);
-                            dbi.insert(replaceWord);
+//                            dbi.delete(old);
+//                            dbi.insert(replaceWord);
                         } else {
                             System.out.println("Thao tac khong hop le, hay thu lai neu muon");
                         }
@@ -240,7 +240,7 @@ public class DictionaryManagement {
                                 String newMeaning = scanner.nextLine();
                                 if (!newMeaning.isEmpty()) {
                                     x.setWord_explain(newMeaning);
-                                    dbi.update(x);
+                                  //  dbi.update(x);
                                 }
 
                                 break;
@@ -278,9 +278,9 @@ public class DictionaryManagement {
 
                                 if(x.getWord_explain().isEmpty()){
                                     dictionary.removeWord(x);
-                                    dbi.delete(x.getWord_target());
+                                 //   dbi.delete(x.getWord_target());
                                 }
-                                else dbi.update(x);
+                             //   else dbi.update(x);
                                 break;
                             }
                             default: {
