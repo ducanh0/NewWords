@@ -1,8 +1,9 @@
 # NewWords
 
 ## Introduction
-app support learn English words
-https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view
+Developing an English learning application using Java
+
+[See details](https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view)
 
 ## Members
   + Nguyen Duc Anh - 22021102
@@ -13,6 +14,9 @@ https://drive.google.com/file/d/1VOIo0rRgQULL4CYqT6XWD0wBRJ6E3zMH/view
 1. Cloning this repository
 2. Open in IntelliJ IDEA
 3. In src\main\java\main\Main.java, run Main.main()
+
+## Inheritance Tree
+![oop.drawio.png](src%2Fmain%2Fresources%2Fcom%2Fexample%2Fnewwords%2Fimages%2Foop.drawio.png)
 
 ## Preview
 
