@@ -15,6 +15,9 @@ Developing an English learning application using Java
 2. Open in IntelliJ IDEA
 3. In src\main\java\main\Main.java, run Main.main()
 
+## Inheritance Tree
+![oop.drawio.png](src%2Fmain%2Fresources%2Fcom%2Fexample%2Fnewwords%2Fimages%2Foop.drawio.png)
+
 ## Preview
 
 ![1.png](src%2Fmain%2Fresources%2Fimages4README%2F1.png)
