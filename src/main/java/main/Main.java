@@ -22,12 +22,12 @@ public class Main {
                // System.out.println("");
                 System.out.println("\n**********************************\n");
                 DictionaryCommandline.main(args);
-                break;
+//                break;
             } else if (act == 1) {
              //   System.out.println("");
                 System.out.println("\n**********************************\n");
                 com.example.newwords.Main.main(args);
-                break;
+//                break;
             } else {
                 System.out.print("Your action must be 0 or 1, try again");
             }
