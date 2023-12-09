@@ -22,16 +22,16 @@
                   <Image url="@images/back-in.png" />
                </image>
             </ImageView>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="178.0" promptText="Search...">
+            <TextField fx:id="textField" layoutX="11.0" layoutY="19.0" prefHeight="43.0" prefWidth="236.0" promptText="Search...">
                <font>
-                  <Font name="System Italic" size="18.0" />
+                  <Font name="System Italic" size="22.0" />
                </font></TextField>
-            <ImageView fitHeight="24.0" fitWidth="48.0" layoutX="161.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="211.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/search.png" />
                </image>
             </ImageView>
-            <ListView fx:id="searchResults" layoutX="14.0" layoutY="65.0" prefHeight="358.0" prefWidth="236.0" />
+            <ListView fx:id="searchResults" layoutX="14.0" layoutY="84.0" prefHeight="337.0" prefWidth="236.0" />
             <ImageView fitHeight="67.0" fitWidth="69.0" layoutX="38.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_great_britain_48px.png" />
@@ -42,14 +42,6 @@
                   <Image url="@images/icons8_vietnam_48px.png" />
                </image>
             </ImageView>
-            <Button fx:id="pronounce" layoutX="205.0" layoutY="14.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="39.0" prefWidth="33.0">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/speak.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
             <ImageView fitHeight="24.0" fitWidth="45.0" layoutX="115.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/main.png" />
@@ -78,9 +70,9 @@
                   <Image url="@images/back-in.png" />
                </image>
             </ImageView>
-            <Label layoutX="29.0" layoutY="14.0" prefHeight="43.0" prefWidth="257.0" text="Explanation" textFill="#ffee00">
+            <Label layoutX="240.0" layoutY="33.0" prefHeight="43.0" prefWidth="145.0" text="Explanation" textFill="#ffee00">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="System Bold Italic" size="22.0" />
                </font>
                <padding>
                   <Insets left="10.0" />
@@ -126,7 +118,10 @@
                      </font></Button>
                </children>
             </HBox>
-            <TextArea fx:id="explanation" layoutX="29.0" layoutY="70.0" prefHeight="358.0" prefWidth="563.0" />
+            <TextArea fx:id="explanation" layoutX="29.0" layoutY="85.0" prefHeight="337.0" prefWidth="563.0">
+               <font>
+                  <Font size="22.0" />
+               </font></TextArea>
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="536.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/main.png" />
@@ -137,12 +132,12 @@
                   <Image url="@images/main.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="402.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="198.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/ene1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="242.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="16.0" layoutX="413.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/ene3.png" />
                </image>
@@ -192,6 +187,14 @@
                   <Image url="@images/bullet.png" />
                </image>
             </ImageView>
+            <Button fx:id="pronounce" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="39.0" prefWidth="33.0">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/speak.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children></AnchorPane>
   </items>
 </SplitPane>

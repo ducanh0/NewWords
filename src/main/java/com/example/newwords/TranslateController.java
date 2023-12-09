@@ -62,6 +62,7 @@ public class TranslateController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        inputText.setWrapText(true);
+        outputText.setWrapText(true);
     }
 }

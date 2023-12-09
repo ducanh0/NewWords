@@ -43,6 +43,11 @@ public class DictionaryController implements Initializable {
             add.setDisable(!ls.isEmpty());
             remove.setDisable(!add.isDisable());
             update.setDisable(!add.isDisable());
+
+            // clear explanation nếu không có từ cần tìm
+            if (ls.isEmpty()) {
+                explanation.clear();
+            }
         });
 
         searchResults.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -52,6 +57,9 @@ public class DictionaryController implements Initializable {
                     String.join("\n", arrayList.get(index).getWord_explain())
             );
         });
+
+        // tự động xuống dòng
+        explanation.setWrapText(true);
     }
 
     public void update(ActionEvent actionEvent) {

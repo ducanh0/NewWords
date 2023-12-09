@@ -43,3 +43,7 @@
 .tab:hover {
     -fx-background-color: #87CEFA;
 }
+
+.list-cell {
+    -fx-font-size: 22px;
+}
