@@ -2,7 +2,7 @@ package main;
 
 public class TrieNode {
     public static final int ABC_SIZE = 26;
-    Word word;
+    private Word word;
     TrieNode[] trieNodes;
 
     int count;

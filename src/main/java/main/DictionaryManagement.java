@@ -12,9 +12,9 @@ import java.util.Scanner;
  */
 public class DictionaryManagement {
 
-    MyDictionary dictionary;
-    Scanner scanner;
-    DatabaseManager dbi;
+    private MyDictionary dictionary;
+    private Scanner scanner;
+    private DatabaseManager dbi;
 
     public DictionaryManagement(Scanner scanner) {
         this.dictionary = new MyDictionary();

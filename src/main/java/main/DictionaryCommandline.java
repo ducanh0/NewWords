@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class DictionaryCommandline {
-    Scanner scanner = new Scanner(System.in);
-    DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
+    private Scanner scanner = new Scanner(System.in);
+    private DictionaryManagement dictionaryManagement = new DictionaryManagement(scanner);
 
     /**
      * in ra man hinh commandline theo format

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class DatabaseManager {
-    Statement statement;
+    private Statement statement;
 
     public DatabaseManager(String location) {
         try {

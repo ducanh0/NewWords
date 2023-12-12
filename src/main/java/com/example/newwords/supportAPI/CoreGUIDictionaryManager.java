@@ -11,9 +11,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class CoreGUIDictionaryManager {
-    MyDictionary dictionary;
-    DatabaseManager dbm;
-    ExecutorService service;
+    private MyDictionary dictionary;
+    private DatabaseManager dbm;
+    private ExecutorService service;
     public CoreGUIDictionaryManager()
     {
         dictionary = new MyDictionary();
