@@ -35,7 +35,7 @@ public class Trie {
 
         for (int i = 0; i <= last; ++i) {
             int c = string.charAt(i)  - 'a';
-
+            if (c < 0 || c >= TrieNode.ABC_SIZE) return;
             if (current.trieNodes[c] == null){
                 current.trieNodes[c] = new TrieNode();
             }
@@ -56,6 +56,7 @@ public class Trie {
 
         for (int i = 0; i < prefix.length(); ++i){
             int nhanh = prefix.charAt(i) - 'a';
+            if (nhanh < 0 || nhanh >= TrieNode.ABC_SIZE) return convert;
 
             if(current.trieNodes[nhanh] == null){
                 return null;
@@ -79,6 +80,7 @@ public class Trie {
 
         for (int i = 0; i < string.length(); ++i) {
             int nhanh = string.charAt(i) - 'a';
+            if (nhanh < 0 || nhanh >= TrieNode.ABC_SIZE) return;
 
             if (current.trieNodes[nhanh] == null)
                 return;
@@ -114,6 +116,7 @@ public class Trie {
         TrieNode current = root;
         for(int i = 0; i < search.length(); ++i){
             int nhanh = search.charAt(i) - 'a';
+            if (nhanh < 0 || nhanh >= TrieNode.ABC_SIZE) return null;
 
             if(current.trieNodes[nhanh] == null) {
                 current = null;
